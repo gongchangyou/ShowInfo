@@ -21,6 +21,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *dbPath = [documentsDirectory stringByAppendingPathComponent:@"showInfo.sqlite3"];
+    
+    if ([fileManager fileExistsAtPath:dbPath] == NO) {
+        //first launch
+        NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"showInfo" ofType:@"sqlite3"];
+        [fileManager copyItemAtPath:resourcePath toPath:dbPath error:&error];
+    }
     return YES;
 }
 							

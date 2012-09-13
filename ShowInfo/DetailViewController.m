@@ -13,14 +13,13 @@
 @end
 
 @implementation DetailViewController
-
 @synthesize detailItem = _detailItem;
-@synthesize detailDescriptionLabel = _detailDescriptionLabel;
+@synthesize introductionTextView = _introductionTextView;
 
 - (void)dealloc
 {
     [_detailItem release];
-    [_detailDescriptionLabel release];
+    [_introductionTextView release];
     [super dealloc];
 }
 
@@ -42,7 +41,7 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.introductionTextView.text = [self.detailItem objectForKey:@"introduction"];
     }
 }
 
@@ -55,9 +54,9 @@
 
 - (void)viewDidUnload
 {
+    [self setIntroductionTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    self.detailDescriptionLabel = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

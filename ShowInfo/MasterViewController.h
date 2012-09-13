@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SQLite.h"
+#import "ASIFormDataRequest.h"
 @interface MasterViewController : UITableViewController
-
+@property (retain, nonatomic) NSArray * newsList;
 @end

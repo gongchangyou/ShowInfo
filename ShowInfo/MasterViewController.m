@@ -16,7 +16,7 @@
 @end
 
 @implementation MasterViewController
-
+@synthesize newsList;
 
 - (void)awakeFromNib
 {
@@ -32,13 +32,53 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    //读取sqlite数据
+    
+    self.newsList = [SQLite selectNews];
+    
+    [self request4news];
+    
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+//    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
+//    self.navigationItem.rightBarButtonItem = addButton;
 }
 
+
+- (void)request4news
+{
+    NSInteger latestId = [SQLite selectLatestId];
+    NSString *url = @"http://shownews.sinaapp.com/downloadNews.php";
+    ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    request.tag = 0;
+    [request addPostValue:[NSString stringWithFormat:@"%d",latestId] forKey:@"start_id"];//当前用户Id
+    [request startAsynchronous];
+    [request release];
+}
+
+
+-(void)requestFinished:(ASIFormDataRequest *) request
+{
+    if (request.tag == 0) {
+        NSString *response = [request responseString];
+    
+        NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
+        if ([[res objectForKey:@"status"] isEqualToString:@"success"]) {
+            NSArray * news = [res objectForKey:@"data"];
+            for (NSInteger i=0; i< [news count]; i++) {
+                [SQLite insertNews:[news objectAtIndex:i]];
+            }
+            self.newsList  = [SQLite selectNews];
+            [self.tableView reloadData];
+        }else {
+            NSLog(@"%@",[res objectForKey:@"status"]);
+        }
+    }
+}
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -69,56 +109,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.newsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    NSInteger row = indexPath.row;
+    NSDictionary *object = [self.newsList objectAtIndex:row];
+    cell.textLabel.text = [object objectForKey:@"title"];
     return cell;
 }
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        NSDictionary *news = [self.newsList objectAtIndex:indexPath.row];
+        [[segue destinationViewController] setDetailItem:news];
     }
 }
 
