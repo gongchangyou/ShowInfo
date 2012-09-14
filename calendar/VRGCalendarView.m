@@ -17,8 +17,9 @@
 @synthesize markedDates,markedColors,calendarHeight,selectedDate;
 
 #pragma mark - Select Date
--(void)selectDate:(int)date {
+-(void)selectDate:(int)date point:(CGPoint)point{
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
     NSDateComponents *comps = [gregorian components:NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit fromDate:self.currentMonth];
     [comps setDay:date];
     self.selectedDate = [gregorian dateFromComponents:comps];
@@ -40,7 +41,7 @@
         [self setNeedsDisplay];
     }
     
-    if ([delegate respondsToSelector:@selector(calendarView:dateSelected:)]) [delegate calendarView:self dateSelected:self.selectedDate];
+    if ([delegate respondsToSelector:@selector(calendarView:dateSelected:point:)]) [delegate calendarView:self dateSelected:self.selectedDate point:point];
 }
 
 #pragma mark - Mark Dates
@@ -244,7 +245,7 @@
         int blockNr = (column+1)+row*7;
         int firstWeekDay = [self.currentMonth firstWeekDayInMonth]-1; //-1 because weekdays begin at 1, not 0
         int date = blockNr-firstWeekDay;
-        [self selectDate:date];
+        [self selectDate:date point:touchPoint];
         return;
     }
     

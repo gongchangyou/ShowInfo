@@ -46,6 +46,60 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
 {
     return;
 }
++(NSArray *)selectCalendar
+{
+    NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
+    
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id, show_id, day from calendar order by day asc";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 0)]
+                    forKey:@"id"];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 1)]
+                    forKey:@"show_id"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)]
+                    forKey:@"day"];
+            [list addObject:dic];
+            //DLog(@"game is %@", dic);
+            [dic release];
+        }
+        return [NSArray arrayWithArray:list];
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
+    
+    
+}
++ (BOOL) insertCalendar:(NSDictionary*)data
+{   sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "insert into calendar (id, show_id, day) values (?,?,?)" ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    NSInteger i=1;
+    
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"id"] intValue]);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"show_id"] intValue]);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"day"] UTF8String], -1, NULL);
+    
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to insert into games?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
+
 
 +(NSInteger) selectLatestId
 {
@@ -95,7 +149,6 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
         NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
     }
     return NO;
-    
 }
 +(NSArray *)selectNews
 {

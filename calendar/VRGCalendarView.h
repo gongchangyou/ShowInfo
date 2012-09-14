@@ -45,7 +45,7 @@
 @property (nonatomic, getter = calendarHeight) float calendarHeight;
 @property (nonatomic, retain, getter = selectedDate) NSDate *selectedDate;
 
--(void)selectDate:(int)date;
+-(void)selectDate:(int)date point:(CGPoint)point;
 -(void)reset;
 
 -(void)markDates:(NSArray *)dates;
@@ -62,5 +62,5 @@
 
 @protocol VRGCalendarViewDelegate <NSObject>
 -(void)calendarView:(VRGCalendarView *)calendarView switchedToYear:(int)year switchedToMonth:(int)month targetHeight:(float)targetHeight animated:(BOOL)animated;
--(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date;
+-(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date point:(CGPoint)point;
 @end

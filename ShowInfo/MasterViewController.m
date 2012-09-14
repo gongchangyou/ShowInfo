@@ -72,6 +72,11 @@
             for (NSInteger i=0; i< [news count]; i++) {
                 [SQLite insertNews:[news objectAtIndex:i]];
             }
+            NSArray * calendar = [res objectForKey:@"calendar"];
+            for (NSInteger i=0; i< [calendar count]; i++) {
+                [SQLite insertCalendar:[calendar objectAtIndex:i]];
+            }
+            
             self.newsList  = [SQLite selectNews];
             [self.tableView reloadData];
         }else {

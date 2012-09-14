@@ -13,6 +13,8 @@
 
 @interface SQLite : NSObject
 
++ (NSArray *) selectCalendar;
++ (BOOL) insertCalendar: (NSDictionary *)calendarData;
 + (NSInteger)  selectLatestId;
 + (BOOL) insertNews: (NSDictionary *)newsData;
 + (NSArray *) selectNews;

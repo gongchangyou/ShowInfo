@@ -12,6 +12,7 @@
 		F74C6FD11601B0400077766C /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FCA1601B0400077766C /* UIColor+expanded.m */; };
 		F74C6FD21601B0400077766C /* UIView+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FCC1601B0400077766C /* UIView+convenience.m */; };
 		F74C6FD31601B0400077766C /* VRGCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FCE1601B0400077766C /* VRGCalendarView.m */; };
+		F74C6FD71601B3B80077766C /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FD61601B3B80077766C /* CalendarViewController.m */; };
 		F788000315FEEA4000D6F237 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F788FFDC15FEEA4000D6F237 /* Reachability.m */; };
 		F788000615FF00AE00D6F237 /* SQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F788000515FF00AE00D6F237 /* SQLite.m */; };
 		F788000815FF016700D6F237 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F788000715FF016700D6F237 /* libsqlite3.dylib */; };
@@ -38,6 +39,15 @@
 		F788FFE215FEEA4000D6F237 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F788FF9115FEEA4000D6F237 /* ASIHTTPRequest.m */; };
 		F788FFE315FEEA4000D6F237 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = F788FF9515FEEA4000D6F237 /* ASIInputStream.m */; };
 		F788FFE415FEEA4000D6F237 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F788FF9715FEEA4000D6F237 /* ASINetworkQueue.m */; };
+		F79714151602F49F009FE612 /* UIView+JMNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714051602F49F009FE612 /* UIView+JMNoise.m */; };
+		F79714161602F49F009FE612 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F79714071602F49F009FE612 /* close.png */; };
+		F79714171602F49F009FE612 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F79714081602F49F009FE612 /* close@2x.png */; };
+		F79714181602F49F009FE612 /* UAModalPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = F797140B1602F49F009FE612 /* UAModalPanel.m */; };
+		F79714191602F49F009FE612 /* UATitledModalPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = F797140D1602F49F009FE612 /* UATitledModalPanel.m */; };
+		F797141A1602F49F009FE612 /* UAGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714101602F49F009FE612 /* UAGradientBackground.m */; };
+		F797141B1602F49F009FE612 /* UANoisyGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714121602F49F009FE612 /* UANoisyGradientBackground.m */; };
+		F797141C1602F49F009FE612 /* UARoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714141602F49F009FE612 /* UARoundedRectView.m */; };
+		F797141F1602F4FA009FE612 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797141E1602F4FA009FE612 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +61,8 @@
 		F74C6FCC1601B0400077766C /* UIView+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+convenience.m"; sourceTree = "<group>"; };
 		F74C6FCD1601B0400077766C /* VRGCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRGCalendarView.h; sourceTree = "<group>"; };
 		F74C6FCE1601B0400077766C /* VRGCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRGCalendarView.m; sourceTree = "<group>"; };
+		F74C6FD51601B3B80077766C /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		F74C6FD61601B3B80077766C /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		F788000415FF00AE00D6F237 /* SQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLite.h; sourceTree = "<group>"; };
 		F788000515FF00AE00D6F237 /* SQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLite.m; sourceTree = "<group>"; };
 		F788000715FF016700D6F237 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -98,6 +110,21 @@
 		F788FF9815FEEA4000D6F237 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
 		F788FFDB15FEEA4000D6F237 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F788FFDC15FEEA4000D6F237 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		F79714041602F49F009FE612 /* UIView+JMNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JMNoise.h"; sourceTree = "<group>"; };
+		F79714051602F49F009FE612 /* UIView+JMNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JMNoise.m"; sourceTree = "<group>"; };
+		F79714071602F49F009FE612 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		F79714081602F49F009FE612 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		F797140A1602F49F009FE612 /* UAModalPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAModalPanel.h; sourceTree = "<group>"; };
+		F797140B1602F49F009FE612 /* UAModalPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAModalPanel.m; sourceTree = "<group>"; };
+		F797140C1602F49F009FE612 /* UATitledModalPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UATitledModalPanel.h; sourceTree = "<group>"; };
+		F797140D1602F49F009FE612 /* UATitledModalPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UATitledModalPanel.m; sourceTree = "<group>"; };
+		F797140F1602F49F009FE612 /* UAGradientBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAGradientBackground.h; sourceTree = "<group>"; };
+		F79714101602F49F009FE612 /* UAGradientBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UAGradientBackground.m; sourceTree = "<group>"; };
+		F79714111602F49F009FE612 /* UANoisyGradientBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UANoisyGradientBackground.h; sourceTree = "<group>"; };
+		F79714121602F49F009FE612 /* UANoisyGradientBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UANoisyGradientBackground.m; sourceTree = "<group>"; };
+		F79714131602F49F009FE612 /* UARoundedRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UARoundedRectView.h; sourceTree = "<group>"; };
+		F79714141602F49F009FE612 /* UARoundedRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UARoundedRectView.m; sourceTree = "<group>"; };
+		F797141E1602F4FA009FE612 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F797141F1602F4FA009FE612 /* QuartzCore.framework in Frameworks */,
 				F788001915FF0EE500D6F237 /* SystemConfiguration.framework in Frameworks */,
 				F788001715FF0ED200D6F237 /* MobileCoreServices.framework in Frameworks */,
 				F788001315FF0E8100D6F237 /* libz.dylib in Frameworks */,
@@ -157,6 +185,7 @@
 		F788FF5C15FEE10200D6F237 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F797141E1602F4FA009FE612 /* QuartzCore.framework */,
 				F788001815FF0EE500D6F237 /* SystemConfiguration.framework */,
 				F788001615FF0ED200D6F237 /* MobileCoreServices.framework */,
 				F788001215FF0E8100D6F237 /* libz.dylib */,
@@ -180,10 +209,13 @@
 				F788FF7315FEE10200D6F237 /* MasterViewController.m */,
 				F788FF7515FEE10200D6F237 /* DetailViewController.h */,
 				F788FF7615FEE10200D6F237 /* DetailViewController.m */,
+				F74C6FD51601B3B80077766C /* CalendarViewController.h */,
+				F74C6FD61601B3B80077766C /* CalendarViewController.m */,
 				F788000915FF062C00D6F237 /* JSONKit.h */,
 				F788000A15FF062C00D6F237 /* JSONKit.m */,
 				F788000415FF00AE00D6F237 /* SQLite.h */,
 				F788000515FF00AE00D6F237 /* SQLite.m */,
+				F79714021602F49F009FE612 /* Panel */,
 				F74C6FC41601B0400077766C /* calendar */,
 				F788FF8315FEEA4000D6F237 /* asihttprequest */,
 				F788FF6415FEE10200D6F237 /* Supporting Files */,
@@ -256,6 +288,59 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		F79714021602F49F009FE612 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				F79714031602F49F009FE612 /* Categories */,
+				F79714061602F49F009FE612 /* Images */,
+				F79714091602F49F009FE612 /* Panels */,
+				F797140E1602F49F009FE612 /* Views */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
+		F79714031602F49F009FE612 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F79714041602F49F009FE612 /* UIView+JMNoise.h */,
+				F79714051602F49F009FE612 /* UIView+JMNoise.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		F79714061602F49F009FE612 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F79714071602F49F009FE612 /* close.png */,
+				F79714081602F49F009FE612 /* close@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		F79714091602F49F009FE612 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				F797140A1602F49F009FE612 /* UAModalPanel.h */,
+				F797140B1602F49F009FE612 /* UAModalPanel.m */,
+				F797140C1602F49F009FE612 /* UATitledModalPanel.h */,
+				F797140D1602F49F009FE612 /* UATitledModalPanel.m */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		F797140E1602F49F009FE612 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F797140F1602F49F009FE612 /* UAGradientBackground.h */,
+				F79714101602F49F009FE612 /* UAGradientBackground.m */,
+				F79714111602F49F009FE612 /* UANoisyGradientBackground.h */,
+				F79714121602F49F009FE612 /* UANoisyGradientBackground.m */,
+				F79714131602F49F009FE612 /* UARoundedRectView.h */,
+				F79714141602F49F009FE612 /* UARoundedRectView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +394,8 @@
 				F788FF6815FEE10200D6F237 /* InfoPlist.strings in Resources */,
 				F788FF7115FEE10200D6F237 /* MainStoryboard.storyboard in Resources */,
 				F788FF7E15FEE8C200D6F237 /* showInfo.sqlite3 in Resources */,
+				F79714161602F49F009FE612 /* close.png in Resources */,
+				F79714171602F49F009FE612 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +426,13 @@
 				F74C6FD11601B0400077766C /* UIColor+expanded.m in Sources */,
 				F74C6FD21601B0400077766C /* UIView+convenience.m in Sources */,
 				F74C6FD31601B0400077766C /* VRGCalendarView.m in Sources */,
+				F74C6FD71601B3B80077766C /* CalendarViewController.m in Sources */,
+				F79714151602F49F009FE612 /* UIView+JMNoise.m in Sources */,
+				F79714181602F49F009FE612 /* UAModalPanel.m in Sources */,
+				F79714191602F49F009FE612 /* UATitledModalPanel.m in Sources */,
+				F797141A1602F49F009FE612 /* UAGradientBackground.m in Sources */,
+				F797141B1602F49F009FE612 /* UANoisyGradientBackground.m in Sources */,
+				F797141C1602F49F009FE612 /* UARoundedRectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

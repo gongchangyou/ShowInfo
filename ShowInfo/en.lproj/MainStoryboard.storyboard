@@ -60,10 +60,41 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="演出列表" id="36"/>
+                    <navigationItem key="navigationItem" title="演出列表" id="36">
+                        <barButtonItem key="rightBarButtonItem" title="日历模式" id="Diq-O1-0JG">
+                            <connections>
+                                <segue destination="09Y-GM-p7X" kind="push" identifier="ShowCalendar" id="BiM-Wv-gWc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
+        </scene>
+        <!--Calendar View Controller - 演出排期-->
+        <scene sceneID="FL0-fX-iU9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUb-8Y-Zye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="09Y-GM-p7X" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nLv-kj-XD1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="dFt-ZB-fXf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="演出排期" id="MXC-ET-HZS"/>
+                    <connections>
+                        <outlet property="calendarView" destination="dFt-ZB-fXf" id="U7e-jl-GMf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="463" y="700"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -94,6 +125,23 @@
             <point key="canvasLocation" x="902" y="64"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calendarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="introductionTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
