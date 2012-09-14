@@ -21,9 +21,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.showCalendar =(NSMutableArray *) [SQLite selectCalendar];
-   
+    self.isShowDay = [[NSMutableDictionary alloc] init];
     for (NSDictionary *showDay in self.showCalendar) {
-        [self.isShowDay setValue:YES forKey:[showDay objectForKey:@"day"]];
+        [self.isShowDay setValue:[NSNumber numberWithBool:YES] forKey:[showDay objectForKey:@"day"]];
     }
     
     
@@ -44,17 +44,30 @@
     }
     if ([dates count]) {
         [VRGCalendarView markDates:dates];
-    }
-    
-    
+    }    
 }
+
+
+- (NSString *)GMTtoLocalDate:(NSDate *) date
+{
+    NSTimeZone *zone = [NSTimeZone localTimeZone];
+    
+    NSInteger interval = [zone secondsFromGMTForDate: date];
+    
+    NSDate *localDate = [date  dateByAddingTimeInterval: interval];  
+    
+    return [[NSString stringWithFormat:@"%@",localDate] substringWithRange:NSMakeRange(0,10)];
+
+}
+
 
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date point: (CGPoint) point
 {
-    NSLog(@"Selected date = %@",date);
-    
+    //NSLog(@"Selected date = %@",date);
+    NSString *day = [self GMTtoLocalDate:date];
+    NSLog(@"Selected date = %@",day);
     //弹出视图显示该日的所有表演
-    if ([self.isShowDay objectForKey:date]) {//有表演
+    if ([self.isShowDay objectForKey:day]) {//有表演
         UATitledModalPanel *modalPanel = [[[UATitledModalPanel alloc] initWithFrame:self.view.bounds] autorelease];
         
         [self.view addSubview:modalPanel];
