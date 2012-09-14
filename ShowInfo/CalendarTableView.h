@@ -8,7 +8,7 @@
 
 #import "UATitledModalPanel.h"
 #import "SQLite.h"
-@interface CalendarTableView : UATitledModalPanel<UITableViewDataSource>
+@interface CalendarTableView : UATitledModalPanel<UITableViewDataSource,UITableViewDelegate>
 {
 	UITableView			*tv;
 	IBOutlet UIView	*viewLoadedFromXib;

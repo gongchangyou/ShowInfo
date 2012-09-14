@@ -16,11 +16,11 @@
 		CGFloat colors[8] = BLACK_BAR_COMPONENTS;
 		[self.titleBar setColorComponents:colors];
 		self.headerLabel.text = title;
-
+        
 		
 		tv = [[[UITableView alloc] initWithFrame:CGRectZero] autorelease];
 		[tv setDataSource:self];
-		
+		[tv setDelegate:self];
 		
 		//[[NSBundle mainBundle] loadNibNamed:@"UAExampleView" owner:self options:nil];
 		self.showList = [[NSMutableArray alloc] init];
@@ -49,7 +49,22 @@
 	[tv setFrame:self.contentView.bounds];
 }
 
-#pragma mark - TableView
+
+
+
+#pragma mark - Table View
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
+    NSLog(@"select");
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.showList count];
 }
