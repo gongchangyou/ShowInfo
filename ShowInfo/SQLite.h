@@ -12,7 +12,8 @@
 
 
 @interface SQLite : NSObject
-
++ (NSDictionary *) selectShowById:(int)show_id;
++ (NSArray *) selectShowByDay: (NSString *)day;
 + (NSArray *) selectCalendar;
 + (BOOL) insertCalendar: (NSDictionary *)calendarData;
 + (NSInteger)  selectLatestId;

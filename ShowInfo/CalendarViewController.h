@@ -10,6 +10,7 @@
 #import "VRGCalendarView.h"
 #import "UATitledModalPanel.h"
 #import "SQLite.h"
+#import "CalendarTableView.h"
 @interface CalendarViewController : UIViewController <VRGCalendarViewDelegate>
 
 @property (retain, nonatomic) NSMutableDictionary * isShowDay;

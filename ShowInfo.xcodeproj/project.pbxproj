@@ -48,6 +48,7 @@
 		F797141B1602F49F009FE612 /* UANoisyGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714121602F49F009FE612 /* UANoisyGradientBackground.m */; };
 		F797141C1602F49F009FE612 /* UARoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714141602F49F009FE612 /* UARoundedRectView.m */; };
 		F797141F1602F4FA009FE612 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797141E1602F4FA009FE612 /* QuartzCore.framework */; };
+		F7971425160328F8009FE612 /* CalendarTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7971424160328F7009FE612 /* CalendarTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,8 @@
 		F79714131602F49F009FE612 /* UARoundedRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UARoundedRectView.h; sourceTree = "<group>"; };
 		F79714141602F49F009FE612 /* UARoundedRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UARoundedRectView.m; sourceTree = "<group>"; };
 		F797141E1602F4FA009FE612 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F7971423160328F7009FE612 /* CalendarTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarTableView.h; sourceTree = "<group>"; };
+		F7971424160328F7009FE612 /* CalendarTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 				F788FF7615FEE10200D6F237 /* DetailViewController.m */,
 				F74C6FD51601B3B80077766C /* CalendarViewController.h */,
 				F74C6FD61601B3B80077766C /* CalendarViewController.m */,
+				F7971423160328F7009FE612 /* CalendarTableView.h */,
+				F7971424160328F7009FE612 /* CalendarTableView.m */,
 				F788000915FF062C00D6F237 /* JSONKit.h */,
 				F788000A15FF062C00D6F237 /* JSONKit.m */,
 				F788000415FF00AE00D6F237 /* SQLite.h */,
@@ -433,6 +438,7 @@
 				F797141A1602F49F009FE612 /* UAGradientBackground.m in Sources */,
 				F797141B1602F49F009FE612 /* UANoisyGradientBackground.m in Sources */,
 				F797141C1602F49F009FE612 /* UARoundedRectView.m in Sources */,
+				F7971425160328F8009FE612 /* CalendarTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

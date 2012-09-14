@@ -46,6 +46,35 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
 {
     return;
 }
++(NSArray *)selectShowByDay:(NSString *)day
+{
+    NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
+    
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id, show_id, day from calendar where day = ?";
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_text(stmt, 1, [day UTF8String], -1, NULL);
+
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 0)]
+                    forKey:@"id"];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 1)]
+                    forKey:@"show_id"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)]
+                    forKey:@"day"];
+            [list addObject:dic];
+            //DLog(@"game is %@", dic);
+            [dic release];
+        }
+        return [NSArray arrayWithArray:list];
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil; 
+}
 +(NSArray *)selectCalendar
 {
     NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
@@ -72,9 +101,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     } else {
         NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
     }
-    return nil;
-    
-    
+    return nil; 
 }
 + (BOOL) insertCalendar:(NSDictionary*)data
 {   sqlite3 *DBCONN = [self open];
@@ -150,6 +177,53 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     }
     return NO;
 }
+
+
++ (NSDictionary *) selectShowById:(int)show_id
+{
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media from show_info where id = ?";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, show_id);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+           
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 0)]
+                    forKey:@"id"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 1)]
+                    forKey:@"title"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 2)]
+                    forKey:@"address"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 3)]
+                    forKey:@"show_time"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 4)]
+                    forKey:@"price"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 5)]
+                    forKey:@"telephone"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 6)]
+                    forKey:@"introduction"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 7)]
+                    forKey:@"url"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 8)]
+                    forKey:@"report_date"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 9)]
+                    forKey:@"report_media"];
+            
+
+        }
+        return dic;
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
+    
+    
+}
+
 +(NSArray *)selectNews
 {
     NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];

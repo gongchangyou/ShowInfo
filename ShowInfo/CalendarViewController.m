@@ -68,10 +68,12 @@
     NSLog(@"Selected date = %@",day);
     //弹出视图显示该日的所有表演
     if ([self.isShowDay objectForKey:day]) {//有表演
-        UATitledModalPanel *modalPanel = [[[UATitledModalPanel alloc] initWithFrame:self.view.bounds] autorelease];
+        CalendarTableView *modalPanel = [[[CalendarTableView alloc] initWithFrame:self.view.bounds title:day ] autorelease];
         
         [self.view addSubview:modalPanel];
+
         [modalPanel showFromPoint:point];
+        
     }
 }
 
