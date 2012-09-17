@@ -42,6 +42,7 @@
 
     if (self.detailItem) {
         self.introductionTextView.text = [self.detailItem objectForKey:@"introduction"];
+        self.navigationItem.title = [self.detailItem objectForKey:@"title"];
     }
 }
 

@@ -120,7 +120,19 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     NSInteger row = indexPath.row;
     NSDictionary *object = [self.newsList objectAtIndex:row];
-    cell.textLabel.text = [object objectForKey:@"title"];
+    
+    //设置title
+    UILabel *titleLable = (UILabel *)[cell.contentView viewWithTag:1];
+    [titleLable setText : [object objectForKey:@"title"]];
+    titleLable.lineBreakMode = UILineBreakModeWordWrap;  
+    titleLable.numberOfLines = 0;  
+    
+    //设置时间
+    UILabel *timeLable = (UILabel *)[cell.contentView viewWithTag:2];
+    [timeLable setText : [object objectForKey:@"report_date"]];
+    //设置简介
+    UILabel *introLable = (UILabel *)[cell.contentView viewWithTag:3];
+    [introLable setText : [object objectForKey:@"introduction"]];
     return cell;
 }
 
