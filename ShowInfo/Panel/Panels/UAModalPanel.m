@@ -150,7 +150,7 @@
 
 - (CGRect)closeButtonFrame {
 	CGRect f = [self roundedRectFrame];
-	return CGRectMake(f.origin.x - floor(closeButton.frame.size.width*0.5),
+	return CGRectMake(f.origin.x + f.size.width - floor(closeButton.frame.size.width*0.5),
 					  f.origin.y - floor(closeButton.frame.size.height*0.5),
 					  closeButton.frame.size.width,
 					  closeButton.frame.size.height);
