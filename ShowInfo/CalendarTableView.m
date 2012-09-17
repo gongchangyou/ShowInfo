@@ -9,7 +9,7 @@
 #import "CalendarTableView.h"
 #define BLACK_BAR_COMPONENTS				{ 0.22, 0.22, 0.22, 1.0, 0.07, 0.07, 0.07, 1.0 }
 @implementation CalendarTableView
-@synthesize viewLoadedFromXib,showList;
+@synthesize viewLoadedFromXib,showList,calendarTableViewDelegate;
 - (id)initWithFrame:(CGRect)frame title:(NSString *)title{
 	if ((self = [super initWithFrame:frame])) {
 		
@@ -64,6 +64,8 @@
      [detailViewController release];
      */
     NSLog(@"select");
+    [calendarTableViewDelegate showDetail:[self.showList objectAtIndex: indexPath.row]];
+    
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.showList count];

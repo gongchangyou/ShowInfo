@@ -69,6 +69,7 @@
     //弹出视图显示该日的所有表演
     if ([self.isShowDay objectForKey:day]) {//有表演
         CalendarTableView *modalPanel = [[[CalendarTableView alloc] initWithFrame:self.view.bounds title:day ] autorelease];
+        modalPanel.calendarTableViewDelegate = self;
         
         [self.view addSubview:modalPanel];
 
@@ -77,6 +78,18 @@
     }
 }
 
+- (void) showDetail:(NSDictionary *)showData
+{
+    [self performSegueWithIdentifier:@"ShowDetail" sender:showData];
+    //[[segue destinationViewController] setDetailItem:news];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(NSDictionary *)showData
+{
+    if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
+        //NSDictionary *news = [self.newsList objectAtIndex:indexPath.row];
+        [(DetailViewController *)[segue destinationViewController] setDetailItem:showData];
+    }
+}
 - (void)viewDidUnload
 {
     [self setCalendarView:nil];
