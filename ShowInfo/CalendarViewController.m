@@ -63,7 +63,7 @@
 
 -(void)calendarView:(VRGCalendarView *)calendarView dateSelected:(NSDate *)date point: (CGPoint) point
 {
-    //NSLog(@"Selected date = %@",date);
+    NSLog(@"Selected date = %@",date);
     NSString *day = [self GMTtoLocalDate:date];
     NSLog(@"Selected date = %@",day);
     //弹出视图显示该日的所有表演
