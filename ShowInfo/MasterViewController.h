@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SQLite.h"
 #import "ASIFormDataRequest.h"
+#import "ImageController.h"
 @interface MasterViewController : UITableViewController
 @property (retain, nonatomic) NSArray * newsList;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F74ADB7F16099E3D000D4D3C /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74ADB7E16099E3D000D4D3C /* ImageController.m */; };
 		F74C6FCF1601B0400077766C /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FC61601B0400077766C /* NSDate+convenience.m */; };
 		F74C6FD01601B0400077766C /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FC81601B0400077766C /* NSMutableArray+convenience.m */; };
 		F74C6FD11601B0400077766C /* UIColor+expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FCA1601B0400077766C /* UIColor+expanded.m */; };
@@ -54,6 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F74ADB7D16099E3D000D4D3C /* ImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ImageController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F74ADB7E16099E3D000D4D3C /* ImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImageController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F74C6FC51601B0400077766C /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
 		F74C6FC61601B0400077766C /* NSDate+convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+convenience.m"; sourceTree = "<group>"; };
 		F74C6FC71601B0400077766C /* NSMutableArray+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+convenience.h"; sourceTree = "<group>"; };
@@ -87,9 +90,9 @@
 		F788FF6D15FEE10200D6F237 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F788FF7015FEE10200D6F237 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F788FF7215FEE10200D6F237 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		F788FF7315FEE10200D6F237 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		F788FF7315FEE10200D6F237 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F788FF7515FEE10200D6F237 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F788FF7615FEE10200D6F237 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F788FF7615FEE10200D6F237 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F788FF7D15FEE8C200D6F237 /* showInfo.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = showInfo.sqlite3; sourceTree = SOURCE_ROOT; };
 		F788FF8515FEEA4000D6F237 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		F788FF8615FEEA4000D6F237 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				F788000A15FF062C00D6F237 /* JSONKit.m */,
 				F788000415FF00AE00D6F237 /* SQLite.h */,
 				F788000515FF00AE00D6F237 /* SQLite.m */,
+				F74ADB7D16099E3D000D4D3C /* ImageController.h */,
+				F74ADB7E16099E3D000D4D3C /* ImageController.m */,
 				F79714021602F49F009FE612 /* Panel */,
 				F74C6FC41601B0400077766C /* calendar */,
 				F788FF8315FEEA4000D6F237 /* asihttprequest */,
@@ -447,6 +452,7 @@
 				F797141B1602F49F009FE612 /* UANoisyGradientBackground.m in Sources */,
 				F797141C1602F49F009FE612 /* UARoundedRectView.m in Sources */,
 				F7971425160328F8009FE612 /* CalendarTableView.m in Sources */,
+				F74ADB7F16099E3D000D4D3C /* ImageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

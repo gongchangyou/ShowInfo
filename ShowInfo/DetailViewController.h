@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ImageController.h"
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) NSDictionary* detailItem;
 
 @property (retain, nonatomic) IBOutlet UITextView *introductionTextView;
-
+@property (retain, nonatomic)NSString * posterName;
 @end

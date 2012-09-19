@@ -60,21 +60,6 @@
     [request release];
 }
 
-- (void)request4img:(NSString *)imageName
-{
-    NSString *urlStr = [NSString stringWithFormat:@"%@/%@",@"http://shownews-poster.stor.sinaapp.com/",imageName];
-    NSURL *url = [NSURL URLWithString:urlStr];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-    request.tag = 1;
-    [request startSynchronous];
-    NSError *error = [request error];
-    if (!error) {
-        NSData *img = [request responseData];
-        NSString *imgFile = [NSTemporaryDirectory() stringByAppendingPathComponent: imageName];
-        [img writeToFile: imgFile atomically: NO];
-    }
-}
-
 -(void)requestFinished:(ASIFormDataRequest *) request
 {
     if (request.tag == 0) {
@@ -85,7 +70,7 @@
             NSArray * news = [res objectForKey:@"data"];
             for (NSInteger i=0; i< [news count]; i++) {
                 [SQLite insertNews:[news objectAtIndex:i]];
-                [self request4img:(NSString *)[[news objectAtIndex:i] objectForKey: @"image_name"]];
+                [ImageController request4img:(NSString *)[[news objectAtIndex:i] objectForKey: @"image_name"]];
             }
             NSArray * calendar = [res objectForKey:@"calendar"];
             for (NSInteger i=0; i< [calendar count]; i++) {
@@ -152,11 +137,9 @@
     //设置图片
     UIImageView *imgView = (UIImageView *)[cell.contentView viewWithTag:4];
     NSString *imageFile = [object objectForKey:@"image_name"];
-    NSString *imgFile = @"sci.gif";
-    if (imageFile) {
-        imgFile = [NSTemporaryDirectory() stringByAppendingPathComponent: imageFile];
-    }
-    UIImage *img = [UIImage imageWithContentsOfFile:imgFile];
+    
+    NSString *imgPathToFile = [ImageController getPathToImage:imageFile];
+    UIImage *img = [UIImage imageWithContentsOfFile:imgPathToFile];
     [imgView setImage:img];
     return cell;
 }
