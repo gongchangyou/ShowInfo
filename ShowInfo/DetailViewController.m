@@ -84,6 +84,7 @@
         self.navigationItem.title = [self.detailItem objectForKey:@"title"];
         
         //请求大图片
+        
         self.posterName = [self.detailItem objectForKey:@"poster_name"];
         NSString *imgPathToFile = [ImageController getPathToImage:self.posterName];
         if([[NSFileManager defaultManager] fileExistsAtPath:imgPathToFile]){

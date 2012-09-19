@@ -186,7 +186,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media from show_info where id = ?";
+    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name, poster_name from show_info where id = ?";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     sqlite3_bind_int(stmt, 1, show_id);
@@ -213,6 +213,10 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
                     forKey:@"report_date"];
             [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 9)]
                     forKey:@"report_media"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 10)]
+                    forKey:@"image_name"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 11)]
+                    forKey:@"poster_name"];
             
 
         }

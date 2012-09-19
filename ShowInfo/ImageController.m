@@ -27,7 +27,7 @@
 + (NSString *)getPathToImage:(NSString *)imageFile
 {
     //NSString *imgFile = @"sci.gif";
-    imageFile = [imageFile isEqualToString:@""] ? @"sci.gif" : imageFile;
+    imageFile = ([imageFile isEqualToString:@""] || imageFile ==nil) ? @"sci.gif" : imageFile;
     
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
