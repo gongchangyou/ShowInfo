@@ -14,4 +14,6 @@
 
 @property (retain, nonatomic) IBOutlet UITextView *introductionTextView;
 @property (retain, nonatomic)NSString * posterName;
+@property (retain, nonatomic)NSString * detailIntroduction;
+@property(retain, nonatomic)ASIHTTPRequest *request;
 @end

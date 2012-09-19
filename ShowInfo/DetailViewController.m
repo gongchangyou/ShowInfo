@@ -16,10 +16,14 @@
 @synthesize detailItem = _detailItem;
 @synthesize introductionTextView = _introductionTextView;
 @synthesize posterName;
+@synthesize detailIntroduction;
+@synthesize request;
 - (void)dealloc
 {
     [_detailItem release];
     [_introductionTextView release];
+    [request clearDelegatesAndCancel];
+    [request release];
     [super dealloc];
 }
 
@@ -36,12 +40,12 @@
     }
 }
 
--(void)requestFinished:(ASIHTTPRequest *) request
+-(void)requestFinished:(ASIHTTPRequest *) ASIrequest
 {
-    if (request.tag == 1) {
-        NSError *error = [request error];
+    if (ASIrequest.tag == 1) {
+        NSError *error = [ASIrequest error];
         if (!error) {
-            NSData *img = [request responseData];
+            NSData *img = [ASIrequest responseData];
             NSString *imgFile = [ImageController getPathToImage: self.posterName];
             [img writeToFile: imgFile atomically: NO];
             
@@ -65,7 +69,7 @@
         rows = [rows stringByAppendingString:@"\n"];
         
     }
-    NSString *content = [NSString stringWithFormat:@"%@%@",rows,[self.detailItem objectForKey:@"introduction"]];
+    NSString *content = [NSString stringWithFormat:@"%@%@",rows,self.detailIntroduction];
     [self.introductionTextView setText: content];
 }
 - (void)configureView
@@ -75,7 +79,7 @@
     if (self.detailItem) {
 
         //设置介绍
-        self.introductionTextView.text = [self.detailItem objectForKey:@"introduction"];//[self.detailItem objectForKey:@"introduction"];
+        self.introductionTextView.text = self.detailIntroduction;
         [self.introductionTextView setEditable:NO];
         self.navigationItem.title = [self.detailItem objectForKey:@"title"];
         
@@ -87,10 +91,10 @@
         }else{
             NSString *urlStr = [NSString stringWithFormat:@"%@/%@",@"http://shownews-poster.stor.sinaapp.com/",self.posterName];
             NSURL *url = [NSURL URLWithString:urlStr];
-            ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-            request.tag = 1;
-            [request setDelegate:self];
-            [request startAsynchronous];
+            self.request = [ASIHTTPRequest requestWithURL:url];
+            self.request.tag = 1;
+            [self.request setDelegate:self];
+            [self.request startAsynchronous];
         }
         
 
@@ -100,6 +104,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *show_time = [NSString stringWithFormat:@"%@%@%@",@"演出时间：",[self.detailItem objectForKey:@"show_time"], @"\n"];
+    NSString *address = [NSString stringWithFormat:@"%@%@%@",@"演出地点：",[self.detailItem objectForKey:@"address"], @"\n"];
+    NSString *price = [NSString stringWithFormat:@"%@%@%@",@"演出票价：",[self.detailItem objectForKey:@"price"], @"\n"];
+    NSString *telephone = [NSString stringWithFormat:@"%@%@%@",@"订票热线：",[self.detailItem objectForKey:@"telephone"], @"\n"];
+    self.detailIntroduction = [NSString stringWithFormat:@"%@%@%@%@\n%@",show_time,address,price, telephone,[self.detailItem objectForKey:@"introduction"]];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
