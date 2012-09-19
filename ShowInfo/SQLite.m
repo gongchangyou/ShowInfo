@@ -149,7 +149,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
 + (BOOL) insertNews:(NSDictionary*)data
 {   sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    const char *sql = "insert into show_info (id, title, address, show_time, price, telephone, introduction, create_time, url, report_date, report_media) values (?,?,?,?,?,?,?,?,?,?,?)" ;
+    const char *sql = "insert into show_info (id, title, address, show_time, price, telephone, introduction, create_time, url, report_date, report_media, image_name) values (?,?,?,?,?,?,?,?,?,?,?,?)" ;
     NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
     NSInteger i=1;
     
@@ -164,7 +164,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"url"] UTF8String], -1, NULL);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"report_date"] UTF8String], -1, NULL);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"report_media"] UTF8String], -1, NULL);
-    
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"image_name"] UTF8String], -1, NULL);
     if( res == SQLITE_OK) {
         if (sqlite3_step(stmt) != SQLITE_DONE)
         {
@@ -173,7 +173,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
             return YES;
         }
     } else {
-        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+        NSLog(@"can't insert table? %s", sqlite3_errmsg(DBCONN));
     }
     return NO;
 }
@@ -230,7 +230,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media from show_info order by report_date desc";
+    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name from show_info order by id desc";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     if( res == SQLITE_OK) {
@@ -256,6 +256,8 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
                     forKey:@"report_date"];
             [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 9)]
                     forKey:@"report_media"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 10)]
+                    forKey:@"image_name"];
             
             [list addObject:dic];
             //DLog(@"game is %@", dic);
@@ -263,7 +265,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
         }
         return [NSArray arrayWithArray:list];
     } else {
-        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+        NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
     }
     return nil;
     
