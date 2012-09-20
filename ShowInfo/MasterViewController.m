@@ -157,9 +157,6 @@
             }
             
             self.newsList  = [SQLite selectNews];
-            
-            
-            
             [self.tableView reloadData];
             
             //记录刷新时间
@@ -226,16 +223,24 @@
     //设置title
     UILabel *titleLable = (UILabel *)[cell.contentView viewWithTag:1];
     [titleLable setText : [object objectForKey:@"title"]];
+    int read = [[object objectForKey:@"read"] intValue];
+    if (read) {
+        [titleLable setTextColor:[UIColor grayColor]];
+    }else {
+        [titleLable setTextColor:[UIColor blackColor]];
+    }
+    //
     titleLable.lineBreakMode = UILineBreakModeWordWrap;  
     titleLable.numberOfLines = 0;  
     
     //设置时间
     UILabel *timeLable = (UILabel *)[cell.contentView viewWithTag:2];
     [timeLable setText : [object objectForKey:@"show_time"]];
+    [timeLable setTextColor:[UIColor grayColor]];
     //设置简介
     UILabel *introLable = (UILabel *)[cell.contentView viewWithTag:3];
     [introLable setText : [object objectForKey:@"introduction"]];
-    
+    [introLable setTextColor:[UIColor grayColor]];
     //设置图片
     UIImageView *imgView = (UIImageView *)[cell.contentView viewWithTag:4];
     NSString *imageFile = [object objectForKey:@"image_name"];
@@ -245,7 +250,24 @@
     [imgView setImage:img];
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
+    //置为已读
+    NSDictionary *show = [self.newsList objectAtIndex:indexPath.row];
+    [SQLite updateRead:[[show objectForKey:@"id"]intValue]];
+    //置为灰色
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:1];
+    [titleLabel setTextColor:[UIColor grayColor]];
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {

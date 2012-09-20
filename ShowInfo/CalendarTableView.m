@@ -66,6 +66,13 @@
     NSLog(@"select");
     [calendarTableViewDelegate showDetail:[self.showList objectAtIndex: indexPath.row]];
     
+    //置为已读
+    NSDictionary *show = [self.showList objectAtIndex:indexPath.row];
+    [SQLite updateRead:[[show objectForKey:@"id"]intValue]];
+    //置为灰色
+    
+    UITableViewCell *cell = [tv cellForRowAtIndexPath:indexPath];
+    [cell.textLabel setTextColor:[UIColor grayColor]];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.showList count];
@@ -80,6 +87,13 @@
 	}
     NSDictionary *show = [self.showList objectAtIndex:indexPath.row];
 	NSString *title = [show objectForKey:@"title"];
+    int read = [[show objectForKey:@"read"] intValue];
+    if (read) {
+        [cell.textLabel setTextColor:[UIColor grayColor]];
+    }else {
+        [cell.textLabel setTextColor:[UIColor blackColor]];
+    }
+    [cell.textLabel setFont:[UIFont systemFontOfSize:15]];
 	[cell.textLabel setText:[NSString stringWithFormat:@"%@", title]];
 	
 	return cell;

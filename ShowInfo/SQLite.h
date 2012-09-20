@@ -19,4 +19,5 @@
 + (NSInteger)  selectLatestId;
 + (BOOL) insertNews: (NSDictionary *)newsData;
 + (NSArray *) selectNews;
++ (BOOL) updateRead:(NSInteger)show_id;
 @end

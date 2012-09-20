@@ -149,7 +149,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
 + (BOOL) insertNews:(NSDictionary*)data
 {   sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    const char *sql = "insert into show_info (id, title, address, show_time, price, telephone, introduction, create_time, url, report_date, report_media, image_name, poster_name) values (?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
+    const char *sql = "insert into show_info (id, title, address, show_time, price, telephone, introduction, create_time, url, report_date, report_media, image_name, poster_name,read) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
     NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
     NSInteger i=1;
     
@@ -166,6 +166,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"report_media"] UTF8String], -1, NULL);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"image_name"] UTF8String], -1, NULL);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"poster_name"] UTF8String], -1, NULL);
+    sqlite3_bind_int(stmt,  i++, 0);
     if( res == SQLITE_OK) {
         if (sqlite3_step(stmt) != SQLITE_DONE)
         {
@@ -186,7 +187,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name, poster_name from show_info where id = ?";
+    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name, poster_name, read from show_info where id = ?";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     sqlite3_bind_int(stmt, 1, show_id);
@@ -217,6 +218,8 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
                     forKey:@"image_name"];
             [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 11)]
                     forKey:@"poster_name"];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 12)]
+                    forKey:@"read"];
             
 
         }
@@ -235,7 +238,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name,poster_name from show_info order by id desc";
+    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name,poster_name,read from show_info order by id desc";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     if( res == SQLITE_OK) {
@@ -265,6 +268,8 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
                     forKey:@"image_name"];
             [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 11)]
                     forKey:@"poster_name"];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 12)]
+                    forKey:@"read"];
             
             [list addObject:dic];
             //DLog(@"game is %@", dic);
@@ -275,7 +280,25 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
         NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
     }
     return nil;
+}
++ (BOOL) updateRead:(NSInteger)show_id
+{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "update show_info set read = 1 where id = ? " ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, show_id);
     
-
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to update [show_info]?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
 }
 @end
