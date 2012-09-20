@@ -63,7 +63,7 @@
     [imgView setImage:image];
     
     [self.introductionTextView addSubview:imgView];
-    int blankRows = image.size.height/15;
+    int blankRows = image.size.height/16;
     NSString *rows = @"";
     for (int i=0; i<blankRows; i++) {
         rows = [rows stringByAppendingString:@"\n"];

@@ -26,6 +26,7 @@
 - (void)dealloc
 {
     [_objects release];
+    _refreshHeaderView =nil;
     [super dealloc];
 }
 
@@ -33,10 +34,21 @@
 {
     [super viewDidLoad];
     
+    if(_refreshHeaderView ==nil){
+        
+        EGORefreshTableHeaderView *view =[[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+        view.delegate = self;
+        [self.tableView addSubview:view];
+        _refreshHeaderView = view;
+        [view release];
+        
+    }
+    
+    //  update the last update date
+    [_refreshHeaderView refreshLastUpdatedDate];
+    
     //读取sqlite数据
-    
     self.newsList = [SQLite selectNews];
-    
     [self request4news];
     
     
@@ -46,8 +58,75 @@
 //    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
 //    self.navigationItem.rightBarButtonItem = addButton;
 }
+-(void)reloadTableViewDataSource{
+    
+    //  should be calling your tableviews data source model to reload
+    //  put here just for demo
+    _reloading =YES;
+    
+}
+-(void)doneLoadingTableViewData{
+    
+    //  model should call this when its done loading
+    
+    //读取sqlite数据
+    [self request4news];
+    
+}
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    [_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
 
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+    [_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+    
+}
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+-(void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+    
+    [self reloadTableViewDataSource];
+    [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+    
+}
+
+-(BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+    
+    return _reloading; // should return if data source model is reloading
+    
+}
+
+-(NSString *)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+    NSString *last_updated_time = [[NSUserDefaults standardUserDefaults] stringForKey:@"last_updated_time"];
+    if (last_updated_time == nil) {
+        last_updated_time = [self getDate:[NSDate date]];
+        [[NSUserDefaults standardUserDefaults] setValue:last_updated_time forKey:@"last_updated_time"];
+    }
+    
+    return last_updated_time; // should return date data source was last changed
+    
+}
+- (NSString *)getDate:(NSDate *)date
+{
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *dd = [cal components:unitFlags fromDate:date];
+    int y = [dd year];
+    int m = [dd month];
+    int d = [dd day];
+    int h = [dd hour];
+    int min = [dd minute];
+   // int s = [dd second];
+    return [NSString stringWithFormat:@"%d年%d月%d日 %02d:%02d",y,m,d,h,min];
+}
 - (void)request4news
 {
     NSInteger latestId = [SQLite selectLatestId];
@@ -78,15 +157,38 @@
             }
             
             self.newsList  = [SQLite selectNews];
+            
+            
+            
             [self.tableView reloadData];
+            
+            //记录刷新时间
+            NSString *last_updated_time = [self getDate:[NSDate date]];
+            [[NSUserDefaults standardUserDefaults] setValue:last_updated_time forKey:@"last_updated_time"];
         }else {
             NSLog(@"%@",[res objectForKey:@"status"]);
+        }
+        if (_reloading) {
+            _reloading =NO;
+            [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+        }
+    }
+}
+-(void)requestFailed:(ASIFormDataRequest *) request
+{
+    if (request.tag == 0) {
+        NSLog(@"request failed");
+        if (_reloading) {
+            _reloading =NO;
+            [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
         }
     }
 }
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    _refreshHeaderView=nil;
+
     // Release any retained subviews of the main view.
 }
 

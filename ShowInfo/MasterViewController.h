@@ -10,6 +10,12 @@
 #import "SQLite.h"
 #import "ASIFormDataRequest.h"
 #import "ImageController.h"
-@interface MasterViewController : UITableViewController
+#import "EGORefreshTableHeaderView.h"
+@interface MasterViewController : UITableViewController<EGORefreshTableHeaderDelegate>{
+    EGORefreshTableHeaderView *_refreshHeaderView;
+    BOOL _reloading;
+}
 @property (retain, nonatomic) NSArray * newsList;
+-(void)reloadTableViewDataSource;
+-(void)doneLoadingTableViewData;
 @end
