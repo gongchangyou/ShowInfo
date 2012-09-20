@@ -164,6 +164,9 @@
             [[NSUserDefaults standardUserDefaults] setValue:last_updated_time forKey:@"last_updated_time"];
         }else {
             NSLog(@"%@",[res objectForKey:@"status"]);
+            
+            NSString *status = [res objectForKey:@"status"];
+            [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityCenter] show];
         }
         if (_reloading) {
             _reloading =NO;

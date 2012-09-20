@@ -51,6 +51,7 @@
 		F794A389160AAAD10005D1AC /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F794A380160AAAD10005D1AC /* grayArrow@2x.png */; };
 		F794A38A160AAAD10005D1AC /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F794A381160AAAD10005D1AC /* whiteArrow.png */; };
 		F794A38B160AAAD10005D1AC /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F794A382160AAAD10005D1AC /* whiteArrow@2x.png */; };
+		F794A39B160ADE970005D1AC /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = F794A39A160ADE970005D1AC /* iToast.m */; };
 		F79714151602F49F009FE612 /* UIView+JMNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = F79714051602F49F009FE612 /* UIView+JMNoise.m */; };
 		F79714161602F49F009FE612 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F79714071602F49F009FE612 /* close.png */; };
 		F79714171602F49F009FE612 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F79714081602F49F009FE612 /* close@2x.png */; };
@@ -137,6 +138,8 @@
 		F794A380160AAAD10005D1AC /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		F794A381160AAAD10005D1AC /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		F794A382160AAAD10005D1AC /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		F794A399160ADE970005D1AC /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		F794A39A160ADE970005D1AC /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		F79714041602F49F009FE612 /* UIView+JMNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JMNoise.h"; sourceTree = "<group>"; };
 		F79714051602F49F009FE612 /* UIView+JMNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JMNoise.m"; sourceTree = "<group>"; };
 		F79714071602F49F009FE612 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				F74C6FD61601B3B80077766C /* CalendarViewController.m */,
 				F7971423160328F7009FE612 /* CalendarTableView.h */,
 				F7971424160328F7009FE612 /* CalendarTableView.m */,
+				F794A399160ADE970005D1AC /* iToast.h */,
+				F794A39A160ADE970005D1AC /* iToast.m */,
 				F788000915FF062C00D6F237 /* JSONKit.h */,
 				F788000A15FF062C00D6F237 /* JSONKit.m */,
 				F788000415FF00AE00D6F237 /* SQLite.h */,
@@ -524,6 +529,7 @@
 				F7971425160328F8009FE612 /* CalendarTableView.m in Sources */,
 				F74ADB7F16099E3D000D4D3C /* ImageController.m in Sources */,
 				F794A383160AAAD10005D1AC /* EGORefreshTableHeaderView.m in Sources */,
+				F794A39B160ADE970005D1AC /* iToast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

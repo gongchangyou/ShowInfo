@@ -11,6 +11,7 @@
 #import "ASIFormDataRequest.h"
 #import "ImageController.h"
 #import "EGORefreshTableHeaderView.h"
+#import "iToast.h"
 @interface MasterViewController : UITableViewController<EGORefreshTableHeaderDelegate>{
     EGORefreshTableHeaderView *_refreshHeaderView;
     BOOL _reloading;
