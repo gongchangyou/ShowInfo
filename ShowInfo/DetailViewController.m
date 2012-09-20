@@ -63,7 +63,7 @@
     [imgView setImage:image];
     
     [self.introductionTextView addSubview:imgView];
-    int blankRows = image.size.height/16;
+    int blankRows = image.size.height/17;
     NSString *rows = @"";
     for (int i=0; i<blankRows; i++) {
         rows = [rows stringByAppendingString:@"\n"];
@@ -81,7 +81,7 @@
         //设置介绍
         self.introductionTextView.text = self.detailIntroduction;
         [self.introductionTextView setEditable:NO];
-        self.navigationItem.title = [self.detailItem objectForKey:@"title"];
+        //self.navigationItem.title = [self.detailItem objectForKey:@"title"];
         
         //请求大图片
         
