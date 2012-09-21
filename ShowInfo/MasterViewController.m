@@ -49,7 +49,8 @@
     
     //读取sqlite数据
     self.newsList = [SQLite selectNews];
-    [self request4news];
+    [self performSelectorInBackground:@selector(request4news) withObject:nil];
+    //[self request4news];
     
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -70,7 +71,8 @@
     //  model should call this when its done loading
     
     //读取sqlite数据
-    [self request4news];
+    //[self request4news];
+    [self performSelectorInBackground:@selector(request4news) withObject:nil];
     
 }
 #pragma mark -
