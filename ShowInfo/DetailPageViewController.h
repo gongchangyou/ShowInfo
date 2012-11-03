@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
 #import "CommentListViewController.h"
-@interface DetailPageViewController : UIViewController <UIScrollViewDelegate>
+@interface DetailPageViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate,UITableViewDataSource>
 {
     UIScrollView *scrollView;
 	UIPageControl *pageControl;

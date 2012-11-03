@@ -12,7 +12,8 @@
 #import "ImageController.h"
 #import "CalendarTableView.h"
 
-@interface CommentListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface CommentListViewController : UIViewController
 @property (strong, nonatomic) NSDictionary* detailItem;
 @property (retain, nonatomic) NSArray * commentList;
+-(NSArray *)getCommentList;
 @end
