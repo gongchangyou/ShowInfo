@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811F0E1C161924B000531617 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F0E1B161924B000531617 /* Default-568h@2x.png */; };
+		8135E66316440901006213C8 /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8135E66216440901006213C8 /* CommentListViewController.m */; };
+		817F096C164435E20039A830 /* star_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F0968164435E20039A830 /* star_empty.png */; };
+		817F096D164435E20039A830 /* star_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F0969164435E20039A830 /* star_empty@2x.png */; };
+		817F096E164435E20039A830 /* star_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F096A164435E20039A830 /* star_full.png */; };
+		817F096F164435E20039A830 /* star_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F096B164435E20039A830 /* star_full@2x.png */; };
 		F74ADB7F16099E3D000D4D3C /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74ADB7E16099E3D000D4D3C /* ImageController.m */; };
 		F74C6FCF1601B0400077766C /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FC61601B0400077766C /* NSDate+convenience.m */; };
 		F74C6FD01601B0400077766C /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FC81601B0400077766C /* NSMutableArray+convenience.m */; };
@@ -65,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		811F0E1B161924B000531617 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8135E66116440901006213C8 /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
+		8135E66216440901006213C8 /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
+		817F0968164435E20039A830 /* star_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_empty.png; sourceTree = "<group>"; };
+		817F0969164435E20039A830 /* star_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_empty@2x.png"; sourceTree = "<group>"; };
+		817F096A164435E20039A830 /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_full.png; sourceTree = "<group>"; };
+		817F096B164435E20039A830 /* star_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_full@2x.png"; sourceTree = "<group>"; };
 		F74ADB7D16099E3D000D4D3C /* ImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ImageController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F74ADB7E16099E3D000D4D3C /* ImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImageController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F74C6FC51601B0400077766C /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
@@ -179,6 +192,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		817F0967164435E20039A830 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				817F0968164435E20039A830 /* star_empty.png */,
+				817F0969164435E20039A830 /* star_empty@2x.png */,
+				817F096A164435E20039A830 /* star_full.png */,
+				817F096B164435E20039A830 /* star_full@2x.png */,
+			);
+			name = Resource;
+			path = ../Resource;
+			sourceTree = "<group>";
+		};
 		F74C6FC41601B0400077766C /* calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +225,7 @@
 		F788FF4E15FEE10100D6F237 = {
 			isa = PBXGroup;
 			children = (
+				811F0E1B161924B000531617 /* Default-568h@2x.png */,
 				F78BD95A160813E80094154F /* icon.png */,
 				F78BD95B160813E80094154F /* icon@2x.png */,
 				F788FF6315FEE10200D6F237 /* ShowInfo */,
@@ -235,10 +261,13 @@
 		F788FF6315FEE10200D6F237 /* ShowInfo */ = {
 			isa = PBXGroup;
 			children = (
+				817F0967164435E20039A830 /* Resource */,
 				F788FF7D15FEE8C200D6F237 /* showInfo.sqlite3 */,
 				F788FF6C15FEE10200D6F237 /* AppDelegate.h */,
 				F788FF6D15FEE10200D6F237 /* AppDelegate.m */,
 				F788FF6F15FEE10200D6F237 /* MainStoryboard.storyboard */,
+				8135E66116440901006213C8 /* CommentListViewController.h */,
+				8135E66216440901006213C8 /* CommentListViewController.m */,
 				F788FF7215FEE10200D6F237 /* MasterViewController.h */,
 				F788FF7315FEE10200D6F237 /* MasterViewController.m */,
 				F788FF7515FEE10200D6F237 /* DetailViewController.h */,
@@ -489,6 +518,11 @@
 				F794A389160AAAD10005D1AC /* grayArrow@2x.png in Resources */,
 				F794A38A160AAAD10005D1AC /* whiteArrow.png in Resources */,
 				F794A38B160AAAD10005D1AC /* whiteArrow@2x.png in Resources */,
+				811F0E1C161924B000531617 /* Default-568h@2x.png in Resources */,
+				817F096C164435E20039A830 /* star_empty.png in Resources */,
+				817F096D164435E20039A830 /* star_empty@2x.png in Resources */,
+				817F096E164435E20039A830 /* star_full.png in Resources */,
+				817F096F164435E20039A830 /* star_full@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +564,7 @@
 				F74ADB7F16099E3D000D4D3C /* ImageController.m in Sources */,
 				F794A383160AAAD10005D1AC /* EGORefreshTableHeaderView.m in Sources */,
 				F794A39B160ADE970005D1AC /* iToast.m in Sources */,
+				8135E66316440901006213C8 /* CommentListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +596,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: changyou gong (R36FT9X4E5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: changyou gong (R36FT9X4E5)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -577,6 +612,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PROVISIONING_PROFILE = "BD4C966B-3594-4727-8942-81E336D100D7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "16364443-8087-451D-AFCC-9A46A2A438E8";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

@@ -301,4 +301,143 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     }
     return NO;
 }
+
++ (BOOL) createTable:(NSString *) tableName crtSql:(NSString *)crtSql
+{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select count(*) from sqlite_master where name=?";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_text(stmt, 1, [tableName UTF8String], -1, NULL);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            if (sqlite3_column_int(stmt, 0)) {
+                NSLog(@"has table %@", tableName);
+            }else{
+                
+                NSInteger res = sqlite3_prepare_v2(DBCONN, [crtSql UTF8String], -1, &stmt, NULL);
+                if( res == SQLITE_OK) {
+                    if (sqlite3_step(stmt) != SQLITE_DONE)
+                    {
+                        NSLog(@"fail to create table %@",tableName);
+                    } else {
+                        NSLog(@"create table %@ success",tableName);
+                        return YES;
+                    }
+                } else {
+                    NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+                }
+                
+            }
+        }
+       
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
++ (BOOL) deleteTable:(NSString *) tableName crtSql:(NSString *)delSql
+{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select count(*) from sqlite_master where name=?";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_text(stmt, 1, [tableName UTF8String], -1, NULL);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            if (sqlite3_column_int(stmt, 0)) {
+                NSLog(@"has table %@", tableName);
+                NSInteger res = sqlite3_prepare_v2(DBCONN, [delSql UTF8String], -1, &stmt, NULL);
+                if( res == SQLITE_OK) {
+                    if (sqlite3_step(stmt) != SQLITE_DONE)
+                    {
+                        NSLog(@"fail to delete table %@",tableName);
+                    } else {
+                        NSLog(@"delete table %@ success",tableName);
+                        return YES;
+                    }
+                } else {
+                    NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+                }
+            }else{              
+                
+            }
+        }
+        
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
++(NSArray *)selectComments:(int)show_id
+{
+    NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
+    
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id, from_id, from_name, to_id, to_name, show_id, comment,star, create_time from comment where show_id=? order by id desc";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, show_id);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            int i=0;
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
+                    forKey:@"id"];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
+                    forKey:@"from_id"];
+            if ((char *)sqlite3_column_text(stmt, i)) {
+                [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
+                        forKey:@"from_name"];
+            }else{
+                i++;
+                [dic setObject:@"" forKey:@"from_name"];
+            }
+            
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
+                    forKey:@"to_id"];
+            if ((char *)sqlite3_column_text(stmt, i)) {
+                [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
+                        forKey:@"to_name"];
+            }else{
+                i++;
+                [dic setObject:@"" forKey:@"to_name"];
+            }
+            
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
+                    forKey:@"show_id"];
+            if ((char *)sqlite3_column_text(stmt, i)) {
+                [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
+                        forKey:@"comment"];
+            }else{
+                i++;
+                [dic setObject:@"" forKey:@"comment"];
+            }
+            
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
+                    forKey:@"star"];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
+                    forKey:@"show_id"];
+            if ((char *)sqlite3_column_text(stmt, i)) {
+                [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
+                        forKey:@"creat_time"];
+            }else{
+                i++;
+                [dic setObject:@"" forKey:@"creat_time"];
+            }
+                        
+            [list addObject:dic];
+            //DLog(@"game is %@", dic);
+            [dic release];
+        }
+        return [NSArray arrayWithArray:list];
+    } else {
+        NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
+}
+
 @end

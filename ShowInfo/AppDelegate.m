@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "SQLite.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -33,9 +33,12 @@
         NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"showInfo" ofType:@"sqlite3"];
         [fileManager copyItemAtPath:resourcePath toPath:dbPath error:&error];
     }
+    [SQLite createTable:@"user" crtSql:@"create table user (id int, name text)"];
+    
+    [SQLite createTable:@"comment" crtSql:@"create table comment (id int, from_id int,from_name text, to_id int,to_name text,show_id int,comment text,star int, create_time text)"];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

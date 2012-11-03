@@ -20,4 +20,7 @@
 + (BOOL) insertNews: (NSDictionary *)newsData;
 + (NSArray *) selectNews;
 + (BOOL) updateRead:(NSInteger)show_id;
++ (BOOL) createTable:(NSString *) tableName crtSql:(NSString *)crtSql;
++ (BOOL) deleteTable:(NSString *) tableName crtSql:(NSString *)crtSql;
++ (NSArray *) selectComments:(int)show_id;
 @end

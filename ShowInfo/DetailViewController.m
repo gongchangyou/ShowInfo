@@ -120,10 +120,17 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showCommentList"]) {
+        [[segue destinationViewController] setDetailItem:self.detailItem];
+    }
+}
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+
 
 @end
