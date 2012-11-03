@@ -9,21 +9,18 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
-- (void)configureView;
+
 @end
 
 @implementation DetailViewController
 @synthesize detailItem = _detailItem;
 @synthesize introductionTextView = _introductionTextView;
-@synthesize posterName;
 @synthesize detailIntroduction;
-@synthesize request;
+
 - (void)dealloc
 {
     [_detailItem release];
     [_introductionTextView release];
-    [request clearDelegatesAndCancel];
-    [request release];
     [super dealloc];
 }
 
@@ -40,21 +37,7 @@
     }
 }
 
--(void)requestFinished:(ASIHTTPRequest *) ASIrequest
-{
-    if (ASIrequest.tag == 1) {
-        NSError *error = [ASIrequest error];
-        if (!error) {
-            NSData *img = [ASIrequest responseData];
-            NSString *imgFile = [ImageController getPathToImage: self.posterName];
-            [img writeToFile: imgFile atomically: NO];
-            
-            //设置图片
-            NSString *posterPathToFile = [ImageController getPathToImage:self.posterName];
-            [self setPoster:posterPathToFile];
-        }
-    }
-}
+
 - (void)setPoster:(NSString *)posterPathToFile
 {
     
@@ -72,35 +55,7 @@
     NSString *content = [NSString stringWithFormat:@"%@%@",rows,self.detailIntroduction];
     [self.introductionTextView setText: content];
 }
-- (void)configureView
-{
-    // Update the user interface for the detail item.
 
-    if (self.detailItem) {
-
-        //设置介绍
-        self.introductionTextView.text = self.detailIntroduction;
-        [self.introductionTextView setEditable:NO];
-        //self.navigationItem.title = [self.detailItem objectForKey:@"title"];
-        
-        //请求大图片
-        
-        self.posterName = [self.detailItem objectForKey:@"poster_name"];
-        NSString *imgPathToFile = [ImageController getPathToImage:self.posterName];
-        if([[NSFileManager defaultManager] fileExistsAtPath:imgPathToFile]){
-            [self setPoster:imgPathToFile];
-        }else{
-            NSString *urlStr = [NSString stringWithFormat:@"%@/%@",@"http://shownews-poster.stor.sinaapp.com/",self.posterName];
-            NSURL *url = [NSURL URLWithString:urlStr];
-            self.request = [ASIHTTPRequest requestWithURL:url];
-            self.request.tag = 1;
-            [self.request setDelegate:self];
-            [self.request startAsynchronous];
-        }
-        
-
-    }
-}
 
 - (void)viewDidLoad
 {
@@ -111,7 +66,7 @@
     NSString *telephone = [NSString stringWithFormat:@"%@%@%@",@"订票热线：",[self.detailItem objectForKey:@"telephone"], @"\n"];
     self.detailIntroduction = [NSString stringWithFormat:@"%@%@%@%@\n%@",show_time,address,price, telephone,[self.detailItem objectForKey:@"introduction"]];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
+    //[self configureView];
 }
 
 - (void)viewDidUnload

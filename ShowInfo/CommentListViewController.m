@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     //读取sqlite 评论数据
+    self.commentList = [[NSArray alloc] init];
     self.commentList = [SQLite selectComments:[[self.detailItem objectForKey: @"id"]intValue]];
     UIView *contentView = [self.view viewWithTag:0];
     
@@ -36,12 +37,6 @@
     //设置title
     UILabel *titleLable = (UILabel *)[contentView viewWithTag:1];
     [titleLable setText : [object objectForKey:@"title"]];
-    int read = [[object objectForKey:@"read"] intValue];
-    if (read) {
-        [titleLable setTextColor:[UIColor grayColor]];
-    }else {
-        [titleLable setTextColor:[UIColor blackColor]];
-    }
     //
     titleLable.lineBreakMode = UILineBreakModeWordWrap;
     titleLable.numberOfLines = 0;
@@ -49,7 +44,6 @@
     //设置时间
     UILabel *timeLable = (UILabel *)[contentView viewWithTag:2];
     [timeLable setText : [object objectForKey:@"show_time"]];
-    [timeLable setTextColor:[UIColor grayColor]];
 //    //设置简介
 //    UILabel *introLable = (UILabel *)[contentView viewWithTag:3];
 //    [introLable setText : [object objectForKey:@"introduction"]];
@@ -72,7 +66,10 @@
         }
 
     }
-    avg_star /= [self.commentList count];
+    if ([self.commentList count]) {
+        avg_star /= [self.commentList count];
+    }
+    
     
     //实心星星
     for (int i = 0; i<avg_star; i++) {
@@ -89,9 +86,9 @@
     
     //添加comment tableView
     //CalendarTableView *modalPanel = [[[CalendarTableView alloc] initWithFrame:self.view.bounds title:@"2012-10-03" ] autorelease];
-    UITableView *commentTV = (UITableView *)[self.view viewWithTag:5];
-    [commentTV setDelegate:self];
-    [commentTV setDataSource:self];
+     UITableView *commentTV = (UITableView *)[self.view viewWithTag:5];
+     [commentTV setDelegate:self];
+     [commentTV setDataSource:self];
     //modalPanel.calendarTableViewDelegate = self;
     
 	// Do any additional setup after loading the view.
@@ -149,17 +146,7 @@
         UIImageView *starImg = (UIImageView *)[cell.contentView viewWithTag:(14 + i)];
         [starImg setImage:[UIImage imageNamed:@"star_empty.png"]];
     }
-//	
-//    NSDictionary *show = [self.commentList objectAtIndex:indexPath.row];
-//	NSString *title = [show objectForKey:@"title"];
-//    int read = [[show objectForKey:@"read"] intValue];
-//    if (read) {
-//        [cell.textLabel setTextColor:[UIColor grayColor]];
-//    }else {
-//        [cell.textLabel setTextColor:[UIColor blackColor]];
-//    }
-//    [cell.textLabel setFont:[UIFont systemFontOfSize:15]];
-//	[cell.textLabel setText:[NSString stringWithFormat:@"%@", title]];
+
 	
 	return cell;
 }

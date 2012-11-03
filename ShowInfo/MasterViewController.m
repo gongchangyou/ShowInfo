@@ -49,7 +49,7 @@
     
     //读取sqlite数据
     self.newsList = [SQLite selectNews];
-    [self performSelectorInBackground:@selector(request4news) withObject:nil];
+    //[self performSelectorInBackground:@selector(request4news) withObject:nil];
     //[self request4news];
     
     

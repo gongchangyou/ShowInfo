@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="-80" y="-13"/>
         </scene>
         <!--Master View Controller - Master-->
         <scene sceneID="18">
@@ -65,7 +65,7 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="21" kind="push" identifier="showDetail" id="Gg0-3D-Ghs"/>
+                                    <segue destination="BZW-7N-seC" kind="push" identifier="showDetail" id="yVR-o8-N0i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,23 +106,52 @@
                     <navigationItem key="navigationItem" title="演出排期" id="MXC-ET-HZS"/>
                     <connections>
                         <outlet property="calendarView" destination="dFt-ZB-fXf" id="U7e-jl-GMf"/>
-                        <segue destination="21" kind="push" identifier="ShowDetail" id="sJx-so-jN3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUb-8Y-Zye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="463" y="700"/>
         </scene>
-        <!--Comment List View Controller-->
-        <scene sceneID="swh-jv-ycn">
+        <!--Detail Page View Controller-->
+        <scene sceneID="QYy-ga-jMQ">
             <objects>
-                <viewController id="8D1-OY-0R5" customClass="CommentListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NAB-Pz-Q1A">
+                <viewController id="BZW-7N-seC" customClass="DetailPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Zb-8W-rcr">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" id="pSx-FZ-lmb">
+                                <rect key="frame" x="0.0" y="-24" width="320" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="4kJ-LZ-dQ9">
+                                <rect key="frame" x="0.0" y="380" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sv9-pR-UnZ"/>
+                    <connections>
+                        <outlet property="pageControl" destination="4kJ-LZ-dQ9" id="e5o-1g-tgF"/>
+                        <outlet property="scrollView" destination="pSx-FZ-lmb" id="ye0-FD-BTT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDr-RO-Nbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="926"/>
+        </scene>
+        <!--Comment List View Controller - CommentList-->
+        <scene sceneID="swh-jv-ycn">
+            <objects>
+                <viewController storyboardIdentifier="CommentList" title="CommentList" id="8D1-OY-0R5" customClass="CommentListViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NAB-Pz-Q1A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
                             <view contentMode="scaleToFill" id="Nke-9p-vFb">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="164"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" tag="14" contentMode="scaleToFill" id="RfR-e0-yqj">
@@ -167,7 +196,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <tableView clipsSubviews="YES" tag="5" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="l9T-Qs-p3M">
-                                <rect key="frame" x="0.0" y="100" width="320" height="320"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="384"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -223,21 +252,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="E3X-Ln-hql" customClass="Comment"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXs-Zp-JC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="633"/>
+            <point key="canvasLocation" x="1339" y="939"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
             <objects>
-                <viewController storyboardIdentifier="" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Detail" title="Detail" id="21" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="5CO-0u-PBv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -248,47 +278,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="详情介绍" id="26">
-                        <barButtonItem key="rightBarButtonItem" title="评论列表" id="cS2-8J-r80">
-                            <connections>
-                                <segue destination="8D1-OY-0R5" kind="push" identifier="showCommentList" id="p44-bV-gRg"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="评论列表" id="cS2-8J-r80"/>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="introductionTextView" destination="5CO-0u-PBv" id="W9n-C3-FvG"/>
+                        <outlet property="introductionTextView" destination="5CO-0u-PBv" id="bYd-Ty-AYd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="64"/>
+            <point key="canvasLocation" x="1312" y="16"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="calendarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CommentListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentListViewController.h"/>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="introductionTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="Gg0-3D-Ghs"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -13,7 +13,9 @@
 @property (strong, nonatomic) NSDictionary* detailItem;
 
 @property (retain, nonatomic) IBOutlet UITextView *introductionTextView;
-@property (retain, nonatomic)NSString * posterName;
+
 @property (retain, nonatomic)NSString * detailIntroduction;
-@property(retain, nonatomic)ASIHTTPRequest *request;
+
+
+- (void)setPoster:(NSString *)posterPathToFile;
 @end

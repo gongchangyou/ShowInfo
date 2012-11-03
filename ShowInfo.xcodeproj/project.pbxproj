@@ -13,6 +13,7 @@
 		817F096D164435E20039A830 /* star_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F0969164435E20039A830 /* star_empty@2x.png */; };
 		817F096E164435E20039A830 /* star_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F096A164435E20039A830 /* star_full.png */; };
 		817F096F164435E20039A830 /* star_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 817F096B164435E20039A830 /* star_full@2x.png */; };
+		81EA7F141644BE10005E53A4 /* DetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EA7F131644BE10005E53A4 /* DetailPageViewController.m */; };
 		F74ADB7F16099E3D000D4D3C /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74ADB7E16099E3D000D4D3C /* ImageController.m */; };
 		F74C6FCF1601B0400077766C /* NSDate+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FC61601B0400077766C /* NSDate+convenience.m */; };
 		F74C6FD01601B0400077766C /* NSMutableArray+convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = F74C6FC81601B0400077766C /* NSMutableArray+convenience.m */; };
@@ -78,6 +79,8 @@
 		817F0969164435E20039A830 /* star_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_empty@2x.png"; sourceTree = "<group>"; };
 		817F096A164435E20039A830 /* star_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_full.png; sourceTree = "<group>"; };
 		817F096B164435E20039A830 /* star_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_full@2x.png"; sourceTree = "<group>"; };
+		81EA7F121644BE10005E53A4 /* DetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPageViewController.h; sourceTree = "<group>"; };
+		81EA7F131644BE10005E53A4 /* DetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPageViewController.m; sourceTree = "<group>"; };
 		F74ADB7D16099E3D000D4D3C /* ImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ImageController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F74ADB7E16099E3D000D4D3C /* ImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ImageController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F74C6FC51601B0400077766C /* NSDate+convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+convenience.h"; sourceTree = "<group>"; };
@@ -266,12 +269,14 @@
 				F788FF6C15FEE10200D6F237 /* AppDelegate.h */,
 				F788FF6D15FEE10200D6F237 /* AppDelegate.m */,
 				F788FF6F15FEE10200D6F237 /* MainStoryboard.storyboard */,
-				8135E66116440901006213C8 /* CommentListViewController.h */,
-				8135E66216440901006213C8 /* CommentListViewController.m */,
 				F788FF7215FEE10200D6F237 /* MasterViewController.h */,
 				F788FF7315FEE10200D6F237 /* MasterViewController.m */,
+				81EA7F121644BE10005E53A4 /* DetailPageViewController.h */,
+				81EA7F131644BE10005E53A4 /* DetailPageViewController.m */,
 				F788FF7515FEE10200D6F237 /* DetailViewController.h */,
 				F788FF7615FEE10200D6F237 /* DetailViewController.m */,
+				8135E66116440901006213C8 /* CommentListViewController.h */,
+				8135E66216440901006213C8 /* CommentListViewController.m */,
 				F74C6FD51601B3B80077766C /* CalendarViewController.h */,
 				F74C6FD61601B3B80077766C /* CalendarViewController.m */,
 				F7971423160328F7009FE612 /* CalendarTableView.h */,
@@ -565,6 +570,7 @@
 				F794A383160AAAD10005D1AC /* EGORefreshTableHeaderView.m in Sources */,
 				F794A39B160ADE970005D1AC /* iToast.m in Sources */,
 				8135E66316440901006213C8 /* CommentListViewController.m in Sources */,
+				81EA7F141644BE10005E53A4 /* DetailPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
