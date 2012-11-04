@@ -7,7 +7,7 @@
 //
 
 #import "DetailPageViewController.h"
-static NSUInteger kNumberOfPages = 4;
+static NSUInteger kNumberOfPages = 2;
 @interface DetailPageViewController ()
 
 @end
@@ -177,7 +177,12 @@ static NSUInteger kNumberOfPages = 4;
 	
 	return cell;
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"CreateComment"]) {
+        [[segue destinationViewController] setDetailItem:self.detailItem];
+    }
+}
 - (IBAction)changePage:(id)sender{
 }
 
