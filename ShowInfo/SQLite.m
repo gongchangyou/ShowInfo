@@ -439,5 +439,81 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     }
     return nil;
 }
++ (BOOL) insertUser:(NSDictionary *)data{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "insert into user (UUID, name) values (?,?)" ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    NSInteger i=1;
+    
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"UUID"] UTF8String], -1, NULL);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"name"] UTF8String], -1, NULL);
 
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to insert into user?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't insert table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+    return true;
+}
++ (BOOL) updateUser:(NSDictionary *)data{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "update user set name=? where UUID=?" ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    NSInteger i=1;
+    
+    
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"name"] UTF8String], -1, NULL);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"UUID"] UTF8String], -1, NULL);
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to update user?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't insert table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return true;
+}
++ (NSMutableDictionary *) selectUser:(NSString *)UUID{
+    
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id, UUID, name from user where UUID=? order by id desc";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_text(stmt, 1, [UUID UTF8String], -1, NULL);
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+           
+            int i = 0;
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)] forKey:@"id"];
+            if ((char *)sqlite3_column_text(stmt, i)) {
+                [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
+                        forKey:@"UUID"];
+            }else{
+                i++;
+                [dic setObject:@"" forKey:@"UUID"];
+            }
+            if ((char *)sqlite3_column_text(stmt, i)) {
+                [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
+                        forKey:@"name"];
+            }else{
+                i++;
+                [dic setObject:@"" forKey:@"name"];
+            }
+        }
+    }
+    return dic;
+}
 @end

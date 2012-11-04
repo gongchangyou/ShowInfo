@@ -19,6 +19,8 @@
 @synthesize rateView=_rateView;
 @synthesize tapRateView=_tapRateView;
 @synthesize star=_star;
+@synthesize scrollView=_scrollView;
+@synthesize UUID=_UUID;
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
@@ -34,6 +36,7 @@
 {
     [super viewDidLoad];
     self.star = 0;
+    self.UUID = [[NSUserDefaults standardUserDefaults] stringForKey:@"ShowInfo_UUID"];
     //读取sqlite 评论数据
     self.commentList = [[NSArray alloc] init];
     
@@ -98,6 +101,9 @@
     self.tapRateView.delegate = self;
     
     [self.rateView addSubview:self.tapRateView];
+    
+    NSMutableDictionary *dic = [SQLite selectUser:self.UUID];
+    self.nameTextField.text = [dic objectForKey:@"name"];
 
 }
 #pragma mark -
@@ -115,7 +121,7 @@
 }
 -(IBAction)textFieldDidBeginEditing:(id)sender
 {
-    
+    [scrollView adjustOffsetToIdealIfNeeded];
 }
 - (IBAction)textFieldDoneEditing:(id)sender {
     [sender resignFirstResponder];
@@ -130,12 +136,41 @@
 - (void)dealloc {
     [_textView release];
     [_rateView release];
+    [_scrollView release];
     [super dealloc];
 }
 - (void)viewDidUnload {
     [self setTextView:nil];
     [self setRateView:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
 }
+- (IBAction)addComment:(id)sender{
+    NSString *name = self.nameTextField.text;
+    if ([name isEqual:@""]) {
+        name = @"游客";
+    }
+    //保存用户信息
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:self.UUID,@"UUID",name,@"name", nil];
+    [SQLite updateUser:dict];
+    
+    //NSString *url = @"http://singsth.sinaapp.com/uploadsong.php";
+    NSString *url = @"http://shownews.sinaapp.com/addComment.php";
+    
+    ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    request.tag = 0;
+//    [request addPostValue:[NSString stringWithFormat:@"%d",self.from_id] forKey:@"from_id"];
+//    [request addPostValue:[NSString stringWithFormat:@"%d",self.to_id] forKey:@"to_id"];
+//    [request addPostValue:[NSString stringWithFormat:@"%d",self.isNew] forKey:@"is_new"];
+    [request addPostValue:self.UUID forKey:@"UUID"];
+    [request addPostValue:name forKey:@"name"];
+    [request addPostValue:[NSString stringWithFormat:@"%d",self.star] forKey:@"star"];
+    [request addPostValue:self.textView.text forKey:@"comment"];
+    
+    [request startAsynchronous];
+    [request release];
 
+}
 @end

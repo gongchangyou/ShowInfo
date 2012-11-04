@@ -23,4 +23,8 @@
 + (BOOL) createTable:(NSString *) tableName crtSql:(NSString *)crtSql;
 + (BOOL) deleteTable:(NSString *) tableName crtSql:(NSString *)crtSql;
 + (NSArray *) selectComments:(int)show_id;
+
++ (BOOL) insertUser:(NSDictionary *)data;
++ (BOOL) updateUser:(NSDictionary *)data;
++ (NSMutableDictionary *) selectUser:(NSString *)UUID;
 @end

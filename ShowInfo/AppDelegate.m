@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
     // Override point for customization after application launch.
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
@@ -33,7 +35,15 @@
         NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"showInfo" ofType:@"sqlite3"];
         [fileManager copyItemAtPath:resourcePath toPath:dbPath error:&error];
     }
-    [SQLite createTable:@"user" crtSql:@"create table user (id int, name text)"];
+    [SQLite createTable:@"user" crtSql:@"create table user (id integer primary key autoincrement, UUID text,name text)"];
+    NSString *UUID = [[NSUserDefaults standardUserDefaults] stringForKey:@"ShowInfo_UUID"];
+    if (UUID == nil) {
+        UUID =  (NSString *)CFUUIDCreateString(NULL, CFUUIDCreate(NULL));
+        [[NSUserDefaults standardUserDefaults] setValue:UUID forKey:@"ShowInfo_UUID"];
+        NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:UUID,@"UUID", nil];
+        [SQLite insertUser:dict];
+        [dict release];
+    }
     
     [SQLite createTable:@"comment" crtSql:@"create table comment (id int, from_id int,from_name text, to_id int,to_name text,show_id int,comment text,star int, create_time text)"];
     return YES;

@@ -98,6 +98,29 @@ static NSUInteger kNumberOfPages = 2;
         [self.scrollView addSubview:controller.view];
     }
 }
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
+    // We don't want a "feedback loop" between the UIPageControl and the scroll delegate in
+    // which a scroll event generated from the user hitting the page control triggers updates from
+    // the delegate method. We use a boolean to disable the delegate logic when the page control is used.
+    if (pageControlUsed)
+    {
+        // do nothing - the scroll was initiated from the page control, not the user dragging
+        return;
+    }
+	
+    // Switch the indicator when more than 50% of the previous/next page is visible
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+    
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    //[self loadScrollViewWithPage:page - 1];
+    //[self loadScrollViewWithPage:page];
+    //[self loadScrollViewWithPage:page + 1];
+    
+    // A possible optimization would be to unload the views+controllers which are no longer visible
+}
 - (void)configureView
 {
     // Update the user interface for the detail item.
@@ -117,6 +140,16 @@ static NSUInteger kNumberOfPages = 2;
             [self.request setDelegate:self];
             [self.request startAsynchronous];
         }
+        
+        //请求评论列表
+        
+        NSString *url = @"http://shownews.sinaapp.com/commentList.php";
+        ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
+        [request setDelegate:self];
+        request.tag = 2;
+        [request addPostValue:[NSString stringWithFormat:@"%d",[[self.detailItem objectForKey:@"id"]intValue]] forKey:@"show_id"];//当前用户Id
+        [request startAsynchronous];
+        [request release];
     }
 }
 
@@ -184,6 +217,29 @@ static NSUInteger kNumberOfPages = 2;
     }
 }
 - (IBAction)changePage:(id)sender{
+    int page = self.pageControl.currentPage;
+	
+    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
+    
+	// update the scroll view to the appropriate page
+    CGRect frame = self.scrollView.frame;
+    frame.origin.x = frame.size.width * page;
+    frame.origin.y = 0;
+    [self.scrollView scrollRectToVisible:frame animated:YES];
+    
+	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
+    pageControlUsed = YES;
+}
+// At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    pageControlUsed = NO;
+}
+
+// At the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    pageControlUsed = NO;
 }
 
 @end

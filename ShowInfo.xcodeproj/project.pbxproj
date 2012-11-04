@@ -10,6 +10,7 @@
 		810BE8B1164601CB00E14B82 /* RSTapRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BE8B0164601CB00E14B82 /* RSTapRateView.m */; };
 		810BE8B41646021E00E14B82 /* UIImageView+Reflected.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BE8B31646021E00E14B82 /* UIImageView+Reflected.m */; };
 		810BE8B61646032400E14B82 /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 810BE8B51646032400E14B82 /* Resource */; };
+		810BE8C41646109C00E14B82 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BE8C31646109C00E14B82 /* TPKeyboardAvoidingScrollView.m */; };
 		811F0E1C161924B000531617 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 811F0E1B161924B000531617 /* Default-568h@2x.png */; };
 		8135E66316440901006213C8 /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8135E66216440901006213C8 /* CommentListViewController.m */; };
 		817B3056164541A100819797 /* CreateCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 817B3055164541A100819797 /* CreateCommentViewController.m */; };
@@ -77,11 +78,11 @@
 		810BE8B21646021E00E14B82 /* UIImageView+Reflected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Reflected.h"; sourceTree = "<group>"; };
 		810BE8B31646021E00E14B82 /* UIImageView+Reflected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Reflected.m"; sourceTree = "<group>"; };
 		810BE8B51646032400E14B82 /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = SOURCE_ROOT; };
+		810BE8C21646109C00E14B82 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		810BE8C31646109C00E14B82 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		811F0E1B161924B000531617 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8135E66116440901006213C8 /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
 		8135E66216440901006213C8 /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
-		815D5EDC16454F9C009C0213 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		815D5EDD16454F9C009C0213 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		817B3054164541A100819797 /* CreateCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCommentViewController.h; sourceTree = "<group>"; };
 		817B3055164541A100819797 /* CreateCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCommentViewController.m; sourceTree = "<group>"; };
 		81EA7F121644BE10005E53A4 /* DetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPageViewController.h; sourceTree = "<group>"; };
@@ -288,8 +289,8 @@
 				F788000515FF00AE00D6F237 /* SQLite.m */,
 				F74ADB7D16099E3D000D4D3C /* ImageController.h */,
 				F74ADB7E16099E3D000D4D3C /* ImageController.m */,
-				815D5EDC16454F9C009C0213 /* TPKeyboardAvoidingScrollView.h */,
-				815D5EDD16454F9C009C0213 /* TPKeyboardAvoidingScrollView.m */,
+				810BE8C21646109C00E14B82 /* TPKeyboardAvoidingScrollView.h */,
+				810BE8C31646109C00E14B82 /* TPKeyboardAvoidingScrollView.m */,
 				F794A375160AAAD10005D1AC /* EGOTableViewPullRefresh */,
 				F79714021602F49F009FE612 /* Panel */,
 				F74C6FC41601B0400077766C /* calendar */,
@@ -572,6 +573,7 @@
 				817B3056164541A100819797 /* CreateCommentViewController.m in Sources */,
 				810BE8B1164601CB00E14B82 /* RSTapRateView.m in Sources */,
 				810BE8B41646021E00E14B82 /* UIImageView+Reflected.m in Sources */,
+				810BE8C41646109C00E14B82 /* TPKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
