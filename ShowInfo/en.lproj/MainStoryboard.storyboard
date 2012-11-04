@@ -106,6 +106,7 @@
                     <navigationItem key="navigationItem" title="演出排期" id="MXC-ET-HZS"/>
                     <connections>
                         <outlet property="calendarView" destination="dFt-ZB-fXf" id="U7e-jl-GMf"/>
+                        <segue destination="BZW-7N-seC" kind="push" identifier="ShowDetail" id="TmH-pB-qVt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUb-8Y-Zye" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,7 +206,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <tableView clipsSubviews="YES" tag="5" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="l9T-Qs-p3M">
-                                <rect key="frame" x="0.0" y="100" width="320" height="384"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="306"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -262,6 +263,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="E3X-Ln-hql" customClass="Comment"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="l9T-Qs-p3M" id="O4F-dR-fmx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXs-Zp-JC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -431,52 +435,12 @@
             <point key="canvasLocation" x="2088" y="181"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CalendarViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="calendarView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CommentListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentListViewController.h"/>
-        </class>
-        <class className="CreateCommentViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateCommentViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addComment:"/>
-                <relationship kind="action" name="textFieldDidBeginEditing:"/>
-                <relationship kind="action" name="textFieldDoneEditing:"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="rateView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="TPKeyboardAvoidingScrollView"/>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="DetailPageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailPageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changePage:"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="DetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="introductionTextView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-        </class>
-        <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="TmH-pB-qVt"/>
+    </inferredMetricsTieBreakers>
 </document>

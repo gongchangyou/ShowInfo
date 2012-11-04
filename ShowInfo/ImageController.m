@@ -32,10 +32,14 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *img = [documentsDirectory stringByAppendingPathComponent:imageFile];
     
+    NSString *img = [documentsDirectory stringByAppendingPathComponent:imageFile];
+    if([[NSFileManager defaultManager] fileExistsAtPath:img])
     //UIImage *img = [UIImage imageWithContentsOfFile:imgFile];
-    return img;
+        return img;
+    else{
+        return [documentsDirectory stringByAppendingPathComponent:@"sci.gif"];
+    }
 }
 
 @end

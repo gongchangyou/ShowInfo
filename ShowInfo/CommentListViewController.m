@@ -56,29 +56,35 @@
     UIImage *img = [UIImage imageWithContentsOfFile:imgPathToFile];
     [imgView setImage:img];
     
+    [self caculateStar];
+}
+
+-(void)caculateStar{
+    UIView *contentView = [self.view viewWithTag:0];
     //tag=14-18 计算星星
-    int avg_star = 0;
+    float avg_star = 0;
     for (NSDictionary *comment in self.commentList) {
         int star = [[comment objectForKey:@"star"] intValue];
         
         if (star) {
             avg_star += star ;
         }
-
+        
     }
     if ([self.commentList count]) {
         avg_star /= [self.commentList count];
     }
     
+    int star = round(avg_star);
     
     //实心星星
-    for (int i = 0; i<avg_star; i++) {
+    for (int i = 0; i<star; i++) {
         UIImageView *starImg = (UIImageView *)[contentView viewWithTag:(14 + i)];
         [starImg setImage:[UIImage imageNamed:@"Resource/star_full.png"]];
     }
     
     //空心星星
-    for (int i = avg_star; i<5; i++) {
+    for (int i = star; i<5; i++) {
         UIImageView *starImg = (UIImageView *)[contentView viewWithTag:(14 + i)];
         [starImg setImage:[UIImage imageNamed:@"Resource/star_empty.png"]];
     }
@@ -94,5 +100,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+- (void)dealloc {
+    [_tableView release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setTableView:nil];
+    [super viewDidUnload];
 }
 @end

@@ -22,6 +22,7 @@ static NSUInteger kNumberOfPages = 2;
 - (void)dealloc
 {
     [_detailItem release];
+    [self.scrollView release];
     [self.request clearDelegatesAndCancel];
     [self.request release];
     [super dealloc];
@@ -60,9 +61,11 @@ static NSUInteger kNumberOfPages = 2;
                 [SQLite insertComment:[commentList objectAtIndex:i]];
                 //[ImageController request4img:(NSString *)[[news objectAtIndex:i] objectForKey: @"image_name"]];
             }
+            
             CommentListViewController *controller = [self.viewControllers objectAtIndex:1];
             controller.commentList  = [SQLite selectComments:[[self.detailItem objectForKey:@"id"]intValue]];
-            [self.tableView reloadData];
+            [controller.tableView reloadData];
+            [controller caculateStar];
             
         }
     }
@@ -113,6 +116,13 @@ static NSUInteger kNumberOfPages = 2;
         [commentTV setDataSource:self];
         [self.scrollView addSubview:controller.view];
         [self request4commentList];
+//        //下面是测试代码
+//        NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:@"mousefrom",@"from_name",@"评论comment",@"comment",[NSNumber numberWithInt:5],@"star",[NSNumber numberWithInt:203],@"show_id", nil];
+//        [SQLite insertComment:dic];
+//        controller.commentList  = [SQLite selectComments:[[self.detailItem objectForKey:@"id"]intValue]];
+//        [controller.tableView reloadData];
+//        [controller caculateStar];
+//        //测试代码完了
     }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)sender

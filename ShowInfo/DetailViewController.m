@@ -31,9 +31,6 @@
     if (_detailItem != newDetailItem) {
         [_detailItem release];
         _detailItem = [newDetailItem retain];
-
-        // Update the view.
-        //[self configureView];
     }
 }
 
@@ -67,6 +64,10 @@
     self.detailIntroduction = [NSString stringWithFormat:@"%@%@%@%@\n%@",show_time,address,price, telephone,[self.detailItem objectForKey:@"introduction"]];
 	// Do any additional setup after loading the view, typically from a nib.
     //[self configureView];
+  
+    self.introductionTextView.text = self.detailIntroduction;
+    [self.introductionTextView setEditable:NO];
+
 }
 
 - (void)viewDidUnload

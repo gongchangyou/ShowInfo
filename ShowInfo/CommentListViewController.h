@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSDictionary* detailItem;
 @property (retain, nonatomic) NSArray * commentList;
 -(NSArray *)getCommentList;
+-(void)caculateStar;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 @end

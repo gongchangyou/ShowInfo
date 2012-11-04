@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/CommentListViewController.m"
-         timestampString = "373638350.850344"
+         timestampString = "373726818.630919"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
          landmarkName = "-didReceiveMemoryWarning"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373561616.118027"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "383"
-         endingLineNumber = "383"
+         startingLineNumber = "413"
+         endingLineNumber = "413"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373561616.118027"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "390"
-         endingLineNumber = "390"
+         startingLineNumber = "420"
+         endingLineNumber = "420"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373561616.118027"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "384"
-         endingLineNumber = "384"
+         startingLineNumber = "414"
+         endingLineNumber = "414"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373561616.118027"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "385"
-         endingLineNumber = "385"
+         startingLineNumber = "415"
+         endingLineNumber = "415"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373567643.269489"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "400"
-         endingLineNumber = "400"
+         startingLineNumber = "430"
+         endingLineNumber = "430"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373567643.269489"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "402"
-         endingLineNumber = "402"
+         startingLineNumber = "432"
+         endingLineNumber = "432"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373567643.269489"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "403"
-         endingLineNumber = "403"
+         startingLineNumber = "433"
+         endingLineNumber = "433"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373567534.56105"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "392"
-         endingLineNumber = "392"
+         startingLineNumber = "422"
+         endingLineNumber = "422"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,25 +216,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373567550.862193"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "393"
-         endingLineNumber = "393"
+         startingLineNumber = "423"
+         endingLineNumber = "423"
          landmarkName = "+selectComments:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CommentListViewController.m"
-         timestampString = "373634885.086558"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "75"
-         endingLineNumber = "75"
-         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -255,11 +242,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +255,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82"
+         startingLineNumber = "78"
+         endingLineNumber = "78"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailViewController.m"
-         timestampString = "373636545.261796"
+         timestampString = "373725537.04075"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "60"
+         endingLineNumber = "60"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -294,11 +281,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -307,7 +294,20 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "79"
@@ -319,25 +319,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "83"
-         endingLineNumber = "83"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailViewController.m"
-         timestampString = "373636545.261796"
+         timestampString = "373725537.04075"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
          landmarkName = "-setPoster:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -346,11 +333,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailViewController.m"
-         timestampString = "373636545.261796"
+         timestampString = "373725537.04075"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
          landmarkName = "-setPoster:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -359,11 +346,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailViewController.m"
-         timestampString = "373636545.261796"
+         timestampString = "373725537.04075"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "-setPoster:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -372,11 +359,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailViewController.m"
-         timestampString = "373636545.261796"
+         timestampString = "373725537.04075"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "-setPoster:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -385,7 +372,46 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
+         landmarkName = "-loadScrollViewWithPage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "109"
+         endingLineNumber = "109"
+         landmarkName = "-loadScrollViewWithPage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "110"
+         endingLineNumber = "110"
+         landmarkName = "-loadScrollViewWithPage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "112"
@@ -398,50 +424,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
-         landmarkName = "-loadScrollViewWithPage:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
-         landmarkName = "-loadScrollViewWithPage:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "116"
-         endingLineNumber = "116"
-         landmarkName = "-loadScrollViewWithPage:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "121"
-         endingLineNumber = "121"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
          landmarkName = "-loadScrollViewWithPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -455,19 +442,6 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "33"
          endingLineNumber = "33"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CommentListViewController.m"
-         timestampString = "373634885.086558"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -502,11 +476,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "109"
-         endingLineNumber = "109"
+         startingLineNumber = "105"
+         endingLineNumber = "105"
          landmarkName = "-loadScrollViewWithPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -515,11 +489,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718950.05006"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
+         startingLineNumber = "104"
+         endingLineNumber = "104"
          landmarkName = "-loadScrollViewWithPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -528,11 +502,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
+         startingLineNumber = "167"
+         endingLineNumber = "167"
          landmarkName = "-request4poster"
          landmarkType = "5">
       </FileBreakpoint>
@@ -541,11 +515,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
+         startingLineNumber = "168"
+         endingLineNumber = "168"
          landmarkName = "-request4poster"
          landmarkType = "5">
       </FileBreakpoint>
@@ -554,11 +528,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "158"
-         endingLineNumber = "158"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
          landmarkName = "-request4poster"
          landmarkType = "5">
       </FileBreakpoint>
@@ -814,11 +788,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373694906.760458"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "474"
-         endingLineNumber = "474"
+         startingLineNumber = "504"
+         endingLineNumber = "504"
          landmarkName = "+updateUser:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -827,11 +801,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "138"
-         endingLineNumber = "138"
+         startingLineNumber = "141"
+         endingLineNumber = "141"
          landmarkName = "-scrollViewDidScroll:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -840,11 +814,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "139"
-         endingLineNumber = "139"
+         startingLineNumber = "142"
+         endingLineNumber = "142"
          landmarkName = "-scrollViewDidScroll:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -853,11 +827,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719064.588849"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "255"
-         endingLineNumber = "255"
+         startingLineNumber = "258"
+         endingLineNumber = "258"
          landmarkName = "-changePage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -879,11 +853,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/CreateCommentViewController.m"
-         timestampString = "373708314.475298"
+         timestampString = "373723616.127043"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "172"
-         endingLineNumber = "172"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
          landmarkName = "-addComment:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -892,12 +866,103 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/CreateCommentViewController.m"
-         timestampString = "373708315.557364"
+         timestampString = "373723616.127043"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373724419.915209"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373724419.915209"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373724419.915209"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "45"
+         endingLineNumber = "45"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373724419.915209"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373724419.915209"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "178"
          endingLineNumber = "178"
-         landmarkName = "-requestFinished:"
+         landmarkName = "-request4commentList"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -905,12 +970,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718945.820342"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
-         landmarkName = "-requestFinished:"
+         startingLineNumber = "98"
+         endingLineNumber = "98"
+         landmarkName = "-loadScrollViewWithPage:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -918,12 +983,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718947.272812"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
-         landmarkName = "-requestFinished:"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
+         landmarkName = "-loadScrollViewWithPage:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -931,12 +996,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373718966.238161"
+         timestampString = "373726488.334945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "44"
-         endingLineNumber = "44"
-         landmarkName = "-requestFinished:"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
+         landmarkName = "-loadScrollViewWithPage:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -944,12 +1009,77 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/DetailPageViewController.m"
-         timestampString = "373719079.999919"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "107"
+         endingLineNumber = "107"
+         landmarkName = "-loadScrollViewWithPage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
+         landmarkName = "-loadScrollViewWithPage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailPageViewController.m"
+         timestampString = "373726488.334945"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
+         landmarkName = "-request4poster"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/DetailViewController.m"
+         timestampString = "373725537.04075"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/CommentListViewController.m"
+         timestampString = "373725671.357284"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "55"
          endingLineNumber = "55"
-         landmarkName = "-requestFinished:"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/CommentListViewController.m"
+         timestampString = "373726830.587922"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "-caculateStar"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
