@@ -27,4 +27,7 @@
 + (BOOL) insertUser:(NSDictionary *)data;
 + (BOOL) updateUser:(NSDictionary *)data;
 + (NSMutableDictionary *) selectUser:(NSString *)UUID;
++ (NSInteger) selectLatestCommentId;
++ (BOOL) insertComment:(NSDictionary*)data;
+
 @end

@@ -179,6 +179,36 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     }
     return NO;
 }
++ (BOOL) insertComment:(NSDictionary*)data
+{   sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "insert into comment (id, from_id, from_name, to_id, to_name, show_id, comment, star, create_time) values (?,?,?,?,?,?,?,?,?)" ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    NSInteger i=1;
+    
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"id"] intValue]);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"from_id"] intValue]);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"from_name"] UTF8String], -1, NULL);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"to_id"] intValue]);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"to_name"] UTF8String], -1, NULL);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"show_id"] intValue]);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"comment"] UTF8String], -1, NULL);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"star"] intValue]);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"create_time"] UTF8String], -1, NULL);
+    
+    
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to insert into comment?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't insert table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
 
 
 + (NSDictionary *) selectShowById:(int)show_id
@@ -515,5 +545,23 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
         }
     }
     return dic;
+}
++(NSInteger) selectLatestCommentId
+{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    char *sql = "select max(id) as id from comment" ;
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            return sqlite3_column_int(stmt, 0);
+        }
+        //DLog(@"empty table [game_list]?");
+    } else {
+        //DLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return 0;
 }
 @end

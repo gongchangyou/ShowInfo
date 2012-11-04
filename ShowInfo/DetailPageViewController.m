@@ -31,23 +31,39 @@ static NSUInteger kNumberOfPages = 2;
     if (_detailItem != newDetailItem) {
         [_detailItem release];
         _detailItem = [newDetailItem retain];
-        
-        // Update the view.
-        //[self configureView];
     }
 }
--(void)requestFinished:(ASIHTTPRequest *) ASIrequest
-{
-    if (ASIrequest.tag == 1) {
-        NSError *error = [ASIrequest error];
+//-(void)requestFinished:(ASIHTTPRequest *) ASIrequest
+//{
+//    
+//}
+-(void)requestFinished:(ASIFormDataRequest *) request{
+    if (request.tag == 1) {
+        NSError *error = [request error];
         if (!error) {
-            NSData *img = [ASIrequest responseData];
+            NSData *img = [request responseData];
             NSString *imgFile = [ImageController getPathToImage: self.posterName];
             [img writeToFile: imgFile atomically: NO];
             
             //设置图片
             NSString *posterPathToFile = [ImageController getPathToImage:self.posterName];
             [[self.viewControllers objectAtIndex:0] setPoster:posterPathToFile];
+        }
+    }else if (request.tag ==2){
+        NSString *response = [request responseString];
+        
+        NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
+        //更新评论列表
+        if ([[res objectForKey:@"status"] isEqualToString:@"success"]) {
+            NSArray * commentList = [res objectForKey:@"data"];
+            for (NSInteger i=0; i< [commentList count]; i++) {
+                [SQLite insertComment:[commentList objectAtIndex:i]];
+                //[ImageController request4img:(NSString *)[[news objectAtIndex:i] objectForKey: @"image_name"]];
+            }
+            CommentListViewController *controller = [self.viewControllers objectAtIndex:1];
+            controller.commentList  = [SQLite selectComments:[[self.detailItem objectForKey:@"id"]intValue]];
+            [self.tableView reloadData];
+            
         }
     }
 }
@@ -83,7 +99,7 @@ static NSUInteger kNumberOfPages = 2;
         controller.view.frame = frame;
         [self.scrollView addSubview:controller.view];
         [self.viewControllers addObject:controller];
-        [self configureView];
+        [self request4poster];
     }else if (page == 1){
         CommentListViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"CommentList"];
         [controller setDetailItem:_detailItem];
@@ -96,6 +112,7 @@ static NSUInteger kNumberOfPages = 2;
         [commentTV setDelegate:self];
         [commentTV setDataSource:self];
         [self.scrollView addSubview:controller.view];
+        [self request4commentList];
     }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -121,7 +138,7 @@ static NSUInteger kNumberOfPages = 2;
     
     // A possible optimization would be to unload the views+controllers which are no longer visible
 }
-- (void)configureView
+- (void)request4poster
 {
     // Update the user interface for the detail item.
     
@@ -141,16 +158,22 @@ static NSUInteger kNumberOfPages = 2;
             [self.request startAsynchronous];
         }
         
-        //请求评论列表
         
-        NSString *url = @"http://shownews.sinaapp.com/commentList.php";
-        ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
-        [request setDelegate:self];
-        request.tag = 2;
-        [request addPostValue:[NSString stringWithFormat:@"%d",[[self.detailItem objectForKey:@"id"]intValue]] forKey:@"show_id"];//当前用户Id
-        [request startAsynchronous];
-        [request release];
     }
+}
+
+-(void) request4commentList{
+    //请求评论列表
+    
+    NSString *url = @"http://shownews.sinaapp.com/commentList.php";
+    ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
+    [request setDelegate:self];
+    request.tag = 2;
+    NSInteger comment_start_id = [SQLite selectLatestCommentId];
+    [request addPostValue:[NSString stringWithFormat:@"%d",[[self.detailItem objectForKey:@"id"]intValue]] forKey:@"show_id"];//当前用户Id
+    [request addPostValue:[NSString stringWithFormat:@"%d",comment_start_id] forKey:@"comment_start_id"];
+    [request startAsynchronous];
+    [request release];
 }
 
 #pragma mark - Table View

@@ -155,22 +155,34 @@
     NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:self.UUID,@"UUID",name,@"name", nil];
     [SQLite updateUser:dict];
     
-    //NSString *url = @"http://singsth.sinaapp.com/uploadsong.php";
+    
     NSString *url = @"http://shownews.sinaapp.com/addComment.php";
     
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     request.tag = 0;
-//    [request addPostValue:[NSString stringWithFormat:@"%d",self.from_id] forKey:@"from_id"];
-//    [request addPostValue:[NSString stringWithFormat:@"%d",self.to_id] forKey:@"to_id"];
-//    [request addPostValue:[NSString stringWithFormat:@"%d",self.isNew] forKey:@"is_new"];
     [request addPostValue:self.UUID forKey:@"UUID"];
     [request addPostValue:name forKey:@"name"];
     [request addPostValue:[NSString stringWithFormat:@"%d",self.star] forKey:@"star"];
     [request addPostValue:self.textView.text forKey:@"comment"];
-    
+    [request addPostValue:[self.detailItem objectForKey:@"id"] forKey:@"show_id"];
     [request startAsynchronous];
     [request release];
+}
 
+-(void)requestFinished:(ASIFormDataRequest *) request
+{
+    if (request.tag == 0) {
+        NSString *response = [request responseString];
+        
+        NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
+//        if ([[res objectForKey:@"status"] isEqualToString:@"success"]) {
+//        
+//        }else {
+//            NSLog(@"%@",[res objectForKey:@"status"]);
+//        }
+        NSString *status = [res objectForKey:@"status"];
+        [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityCenter] show];
+    }
 }
 @end

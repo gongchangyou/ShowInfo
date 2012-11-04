@@ -11,7 +11,8 @@
 #import "SQLite.h"
 #import <QuartzCore/QuartzCore.h>
 #import "RSTapRateView.h"
-
+#import "iToast.h"
+#import "ASIFormDataRequest.h"
 @class TPKeyboardAvoidingScrollView;
 @interface CreateCommentViewController : UIViewController<UITextFieldDelegate,RSTapRateViewDelegate>{
 
