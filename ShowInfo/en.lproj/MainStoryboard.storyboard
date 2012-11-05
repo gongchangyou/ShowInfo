@@ -113,7 +113,7 @@
             </objects>
             <point key="canvasLocation" x="495" y="1244"/>
         </scene>
-        <!--Detail Page View Controller - 演出详情-->
+        <!--Detail Page View Controller-->
         <scene sceneID="QYy-ga-jMQ">
             <objects>
                 <viewController id="BZW-7N-seC" customClass="DetailPageViewController" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="演出详情" id="Sv9-pR-UnZ">
+                    <navigationItem key="navigationItem" id="Sv9-pR-UnZ">
                         <barButtonItem key="rightBarButtonItem" title="去评论" id="lJR-N7-8r7">
                             <connections>
                                 <segue destination="LnG-VL-2YH" kind="push" identifier="CreateComment" id="Ph9-Tp-gAo"/>

@@ -73,6 +73,7 @@ static NSUInteger kNumberOfPages = 2;
 - (void)viewDidLoad{
     // a page is the width of the scroll view
     //self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 320*kNumberOfPages, self.scrollView.frame.size.height)];
+    [self setNaviTitle:0];
     self.scrollView.pagingEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width*kNumberOfPages, self.scrollView.frame.size.height);
     self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -262,10 +263,10 @@ static NSUInteger kNumberOfPages = 2;
 
 -(void)setNaviTitle:(int)page{
     if (page == 0) {
-        self.navigationController.title = @"演出详情";
+        self.navigationItem.title = @"演出详情";
     }else if(page == 1){
         //self.navigationController.title = @"评论列表";
-        [self.navigationController setTitle:@"评论列表"];
+        [self.navigationItem setTitle:@"评论列表"];
     }
 }
 // At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl
