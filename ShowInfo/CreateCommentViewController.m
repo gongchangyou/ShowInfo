@@ -63,7 +63,7 @@
     UIImageView *imgView = (UIImageView *)[contentView viewWithTag:4];
     NSString *imageFile = [object objectForKey:@"image_name"];
     
-    NSString *imgPathToFile = [ImageController getPathToImage:imageFile];
+    NSString *imgPathToFile = [ImageController getPathToExistImage:imageFile];
     UIImage *img = [UIImage imageWithContentsOfFile:imgPathToFile];
     [imgView setImage:img];
     
@@ -176,13 +176,15 @@
         NSString *response = [request responseString];
         
         NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
-//        if ([[res objectForKey:@"status"] isEqualToString:@"success"]) {
-//        
-//        }else {
-//            NSLog(@"%@",[res objectForKey:@"status"]);
-//        }
+
         NSString *status = [res objectForKey:@"status"];
         [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityCenter] show];
+    }
+}
+-(void)requestFailed:(ASIFormDataRequest *) request
+{
+    if (request.tag == 0) {
+        [[[iToast makeText:NSLocalizedString(@"提交失败", @"")]setGravity:iToastGravityCenter] show];
     }
 }
 @end

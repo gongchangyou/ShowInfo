@@ -140,13 +140,7 @@ static NSUInteger kNumberOfPages = 2;
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     self.pageControl.currentPage = page;
-    
-    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
-    //[self loadScrollViewWithPage:page - 1];
-    //[self loadScrollViewWithPage:page];
-    //[self loadScrollViewWithPage:page + 1];
-    
-    // A possible optimization would be to unload the views+controllers which are no longer visible
+    [self setNaviTitle:page];
 }
 - (void)request4poster
 {
@@ -262,6 +256,17 @@ static NSUInteger kNumberOfPages = 2;
     
 	// Set the boolean used when scrolls originate from the UIPageControl. See scrollViewDidScroll: above.
     pageControlUsed = YES;
+    [self setNaviTitle:page];
+    
+}
+
+-(void)setNaviTitle:(int)page{
+    if (page == 0) {
+        self.navigationController.title = @"演出详情";
+    }else if(page == 1){
+        //self.navigationController.title = @"评论列表";
+        [self.navigationController setTitle:@"评论列表"];
+    }
 }
 // At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

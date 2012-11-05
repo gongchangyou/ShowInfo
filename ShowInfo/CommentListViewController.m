@@ -52,7 +52,7 @@
     UIImageView *imgView = (UIImageView *)[contentView viewWithTag:4];
     NSString *imageFile = [object objectForKey:@"image_name"];
     
-    NSString *imgPathToFile = [ImageController getPathToImage:imageFile];
+    NSString *imgPathToFile = [ImageController getPathToExistImage:imageFile];
     UIImage *img = [UIImage imageWithContentsOfFile:imgPathToFile];
     [imgView setImage:img];
     
