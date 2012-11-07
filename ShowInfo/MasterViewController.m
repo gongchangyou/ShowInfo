@@ -131,7 +131,7 @@
 }
 - (void)request4news
 {
-    NSInteger latestId = [SQLite selectLatestId];
+    NSInteger latestId = [SQLite selectLatestId:@"show_info"];
     NSString *url = @"http://shownews.sinaapp.com/downloadNews.php";
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
@@ -250,8 +250,7 @@
     UIImageView *imgView = (UIImageView *)[cell.contentView viewWithTag:4];
     NSString *imageFile = [object objectForKey:@"image_name"];
     
-    NSString *imgPathToFile = [ImageController getPathToExistImage:imageFile];
-    UIImage *img = [UIImage imageWithContentsOfFile:imgPathToFile];
+    UIImage *img = [ImageController getUIImage:imageFile];
     [imgView setImage:img];
     return cell;
 }

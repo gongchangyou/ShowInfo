@@ -6,7 +6,7 @@
 //
 //
 
-#import "DetailPageViewController.h"
+#import "MasterPageViewController.h"
 static NSUInteger kNumberOfPages = 2;
 @interface DetailPageViewController ()
 
@@ -117,6 +117,13 @@ static NSUInteger kNumberOfPages = 2;
         [commentTV setDataSource:self];
         [self.scrollView addSubview:controller.view];
         [self request4commentList];
+//        //下面是测试代码
+//        NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:@"mousefrom",@"from_name",@"评论comment",@"comment",[NSNumber numberWithInt:5],@"star",[NSNumber numberWithInt:203],@"show_id", nil];
+//        [SQLite insertComment:dic];
+//        controller.commentList  = [SQLite selectComments:[[self.detailItem objectForKey:@"id"]intValue]];
+//        [controller.tableView reloadData];
+//        [controller caculateStar];
+//        //测试代码完了
     }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -258,6 +265,7 @@ static NSUInteger kNumberOfPages = 2;
     if (page == 0) {
         self.navigationItem.title = @"演出详情";
     }else if(page == 1){
+        //self.navigationController.title = @"评论列表";
         [self.navigationItem setTitle:@"评论列表"];
     }
 }

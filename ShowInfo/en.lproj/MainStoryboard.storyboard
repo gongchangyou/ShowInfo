@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Rxl-q7-qEo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
@@ -112,6 +112,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUb-8Y-Zye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="495" y="1244"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="cu3-Cb-xax">
+            <objects>
+                <viewController storyboardIdentifier="Category" id="ep3-C0-zEw" customClass="CategoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ikd-0g-Cdc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqO-RX-wUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637" y="1511"/>
         </scene>
         <!--Detail Page View Controller-->
         <scene sceneID="QYy-ga-jMQ">
@@ -402,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90B-Qg-lBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="1568"/>
+            <point key="canvasLocation" x="2597" y="1568"/>
         </scene>
         <!--Detail View Controller - Detail-->
         <scene sceneID="24">
@@ -434,7 +449,115 @@
             </objects>
             <point key="canvasLocation" x="2088" y="181"/>
         </scene>
+        <!--Master Page View Controller-->
+        <scene sceneID="x8Z-w1-Xru">
+            <objects>
+                <viewController id="yn6-Lu-3cU" customClass="MasterPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ePe-Ii-tIz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" id="0S1-Gs-wfA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="uBv-lJ-fbi">
+                                <rect key="frame" x="0.0" y="380" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="changePage:" destination="yn6-Lu-3cU" eventType="valueChanged" id="QRM-A9-tez"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j1n-Y8-7Od"/>
+                    <connections>
+                        <outlet property="pageControl" destination="uBv-lJ-fbi" id="x3T-tq-UY8"/>
+                        <outlet property="scrollView" destination="0S1-Gs-wfA" id="wYz-Iz-rJR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wey-W5-XD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994" y="1824"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vVM-xj-I48">
+            <objects>
+                <navigationController id="Rxl-q7-qEo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pJE-jb-aIS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yn6-Lu-3cU" kind="relationship" relationship="rootViewController" id="u5r-DZ-yJh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyX-Ah-iU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="1824"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="CalendarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalendarViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calendarView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="CategoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoryViewController.h"/>
+        </class>
+        <class className="CommentListViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentListViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CreateCommentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateCommentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addComment:"/>
+                <relationship kind="action" name="textFieldDidBeginEditing:"/>
+                <relationship kind="action" name="textFieldDoneEditing:"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="rateView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="TPKeyboardAvoidingScrollView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="DetailPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailPageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changePage:"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="introductionTextView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="MasterPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterPageViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changePage:"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="TPKeyboardAvoidingScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingScrollView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

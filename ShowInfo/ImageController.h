@@ -13,5 +13,5 @@
 @interface ImageController : NSObject
 + (void)request4img:(NSString *)imageName;
 + (NSString *)getPathToImage:(NSString *)imageFile;
-+ (NSString *)getPathToExistImage:(NSString *)imageFile;
++ (UIImage *)getUIImage:(NSString *)imageFile;
 @end

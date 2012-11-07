@@ -126,30 +126,75 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     }
     return NO;
 }
++ (BOOL) insertCategory:(NSDictionary*)data
+{   sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "insert into category (id, name) values (?,?)" ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    NSInteger i=1;
+    
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"id"] intValue]);
+    sqlite3_bind_text(stmt, i++, [[data objectForKey:@"name"] UTF8String], -1, NULL);
+    
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to insert into category?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
++ (BOOL) updateCategoryId:(NSDictionary*)data
+{   sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    const char *sql = "update show_info set categoryId=? where id=?" ;
+    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
+    NSInteger i=1;
+    
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"id"] intValue]);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"categoryId"] intValue]);
+   
+    
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to update categoryId?");
+        } else {
+            return YES;
+        }
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
 
-
-+(NSInteger) selectLatestId
++(NSInteger) selectLatestId:(NSString *)tableName
 {
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    char *sql = "select max(id) as id from show_info" ;
     
-    NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);     
+    NSString *sql = [NSString stringWithFormat:@"select max(id) as id from %@", tableName];
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     
     if( res == SQLITE_OK) {
         while(sqlite3_step(stmt) == SQLITE_ROW) {
             return sqlite3_column_int(stmt, 0);
         }
-        //DLog(@"empty table [game_list]?");
     } else {
-        //DLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+        
     }
     return 0;
 }
+
 + (BOOL) insertNews:(NSDictionary*)data
 {   sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    const char *sql = "insert into show_info (id, title, address, show_time, price, telephone, introduction, create_time, url, report_date, report_media, image_name, poster_name,read) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
+    const char *sql = "insert into show_info (id, title, address, show_time, price, telephone, introduction, create_time, url, report_date, report_media, image_name, poster_name,read,categoryId) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
     NSInteger res = sqlite3_prepare_v2(DBCONN, sql, -1, &stmt, NULL);
     NSInteger i=1;
     
@@ -167,6 +212,7 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"image_name"] UTF8String], -1, NULL);
     sqlite3_bind_text(stmt, i++, [[data objectForKey:@"poster_name"] UTF8String], -1, NULL);
     sqlite3_bind_int(stmt,  i++, 0);
+    sqlite3_bind_int(stmt,  i++, [[data objectForKey:@"categoryId"] intValue]);
     if( res == SQLITE_OK) {
         if (sqlite3_step(stmt) != SQLITE_DONE)
         {
@@ -261,7 +307,30 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     
     
 }
-
++ (NSArray *)selectNewsWithoutCategory
+{
+    NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
+    
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id from show_info where categoryId=0 or categoryId='' order by id desc";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 0)]
+                    forKey:@"id"];
+            [list addObject:dic];
+            
+            [dic release];
+        }
+        return [NSArray arrayWithArray:list];
+    } else {
+        NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
+}
 +(NSArray *)selectNews
 {
     NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
@@ -563,5 +632,83 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
         //DLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
     }
     return 0;
+}
++ (BOOL) isExistColumn:(NSString *)table columnName:(NSString *)columnName{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    
+    NSString *sql = [NSString stringWithFormat:@"select %@ from %@", columnName, table];
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            return YES;
+        }
+        return YES;
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+        return NO;
+    }
+}
++ (BOOL) addColumn:(NSString *)table columnName:(NSString *)columnName type:(NSString *)type defaultValue:(NSString *)defaultValue{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    
+    NSString *sql = [NSString stringWithFormat:@"alter table %@ add Column %@ %@ default %@", table, columnName, type, defaultValue];
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    if( res == SQLITE_OK) {
+        if (sqlite3_step(stmt) != SQLITE_DONE)
+        {
+            NSLog(@"fail to add column %@ table %@",columnName,table);
+        } else {
+            NSLog(@"create column %@ success",columnName);
+            return YES;
+        }
+    } else {
+        NSLog(@"can't open table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return NO;
+}
+
++ (NSArray *)selectCategory{
+    NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
+    
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select id,name from category order by id asc";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, 0)]
+                    forKey:@"id"];
+            [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 1)]
+                    forKey:@"name"];
+            [list addObject:dic];
+            [dic release];
+        }
+        return [NSArray arrayWithArray:list];
+    } else {
+        NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
+}
+
++ (NSString *)selectImageName:(int)categoryId{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select image_name  from show_info where categoryId=? order by id desc limit 1";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, categoryId);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            return [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 0)];
+        }
+    } else {
+        NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
 }
 @end

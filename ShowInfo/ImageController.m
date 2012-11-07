@@ -37,19 +37,19 @@
     
     return img;
 }
-+ (NSString *)getPathToExistImage:(NSString *)imageFile
++ (UIImage *)getUIImage:(NSString *)imageFile
 {
-    imageFile = ([imageFile isEqualToString:@""] || imageFile ==nil) ? @"sci.gif" : imageFile;
-    
-    
+    if ([imageFile isEqualToString:@""] || imageFile==nil) {
+        return [UIImage imageNamed:@"Resource/sci.png"];
+    }
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
     NSString *img = [documentsDirectory stringByAppendingPathComponent:imageFile];
-    if([[NSFileManager defaultManager] fileExistsAtPath:img])
-        return img;
-    else{
-        return [documentsDirectory stringByAppendingPathComponent:@"sci.gif"];
+    if([[NSFileManager defaultManager] fileExistsAtPath:img]){
+        return [UIImage imageWithContentsOfFile:img];
+    }else{
+        return [UIImage imageNamed:@"Resource/sci.png"];
     }
 }
 
