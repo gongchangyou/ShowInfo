@@ -88,7 +88,7 @@ static NSUInteger iconsPerPage = 6;
 }
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSError *error = [request error];
+    //NSError *error = [request error];
     //自己插入category如果没有的话
     NSInteger welcomeFlag = [[NSUserDefaults standardUserDefaults] boolForKey:@"welcomeFlag"];
     if (!welcomeFlag) {

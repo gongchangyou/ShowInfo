@@ -156,7 +156,7 @@
                 [SQLite insertCalendar:[calendar objectAtIndex:i]];
             }
             
-            self.newsList  = [SQLite selectNews];
+            self.newsList  = [SQLite selectNews:self.categoryId];
             [self.tableView reloadData];
             
             //记录刷新时间
