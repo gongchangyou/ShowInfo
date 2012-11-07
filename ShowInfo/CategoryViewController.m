@@ -14,6 +14,7 @@
 
 @implementation CategoryViewController
 @synthesize categoryList=_categoryList;
+@synthesize delegate;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,7 +35,7 @@
         UIImage *img = [ImageController getUIImage:imageFile];
         
         [button setBackgroundImage:img forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(changeToMasterView:) forControlEvents:UIControlEventTouchDown];
+        [button addTarget:delegate action:@selector(turnToMasterView:) forControlEvents:UIControlEventTouchDown];
         button.tag = categoryId;
         [self.view addSubview:button];
         //添加label

@@ -177,7 +177,7 @@
         NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
 
         NSString *status = [res objectForKey:@"status"];
-        [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityCenter] show];
+        [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityBottom] show];
     }
 }
 -(void)requestFailed:(ASIFormDataRequest *) request

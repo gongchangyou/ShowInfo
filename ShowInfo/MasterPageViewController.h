@@ -12,7 +12,8 @@
 #import "ImageController.h"
 #import "iToast.h"
 #import "CategoryViewController.h"
-@interface MasterPageViewController : UIViewController<UIScrollViewDelegate>
+#import "MasterViewController.h"
+@interface MasterPageViewController : UIViewController<UIScrollViewDelegate, categoryViewControllerDelegate>
 {
     UIScrollView *scrollView;
 	UIPageControl *pageControl;

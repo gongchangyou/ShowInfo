@@ -20,7 +20,7 @@
 + (BOOL) updateCategoryId:(NSDictionary*)data;
 + (NSInteger)  selectLatestId:(NSString*) tableName;
 + (BOOL) insertNews: (NSDictionary *)newsData;
-+ (NSArray *) selectNews;
++ (NSArray *) selectNews:(int)categoryId;
 + (NSArray *)selectNewsWithoutCategory;
 + (BOOL) updateRead:(NSInteger)show_id;
 + (BOOL) createTable:(NSString *) tableName crtSql:(NSString *)crtSql;

@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SQLite.h"
 #import "ImageController.h"
-@interface CategoryViewController : UIViewController
-
+@protocol categoryViewControllerDelegate
+-(void)turnToMasterView:(UIButton *)sender;
+@end
+@interface CategoryViewController : UIViewController{
+    id<categoryViewControllerDelegate> delegate;
+}
+@property (nonatomic, assign) id<categoryViewControllerDelegate> delegate;
 @property(nonatomic,retain)NSArray *categoryList;
 @end

@@ -73,20 +73,27 @@ static NSUInteger iconsPerPage = 6;
             for (NSInteger i=0; i< [updateShowList count]; i++) {
                 [SQLite updateCategoryId:[updateShowList objectAtIndex:i]];
             }
-            
+            BOOL welcomeFlag = [[NSUserDefaults standardUserDefaults] boolForKey:@"welcomeFlag"];
+            if (!welcomeFlag) {
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"welcomeFlag"];
+            }
         }else {
             NSLog(@"%@",[res objectForKey:@"status"]);
             
             NSString *status = [res objectForKey:@"status"];
-            [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityCenter] show];
+            [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityBottom] show];
         }
-    [self show];
+        [self show];
     }
 }
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSError *error = [request error];
     //自己插入category如果没有的话
+    NSInteger welcomeFlag = [[NSUserDefaults standardUserDefaults] boolForKey:@"welcomeFlag"];
+    if (!welcomeFlag) {
+        [[[iToast makeText:NSLocalizedString(@"网络连接不上哦~", @"")]setGravity:iToastGravityBottom] show];
+    }   
 }
 - (void)show{
     //整理图标 贴label
@@ -128,6 +135,7 @@ static NSUInteger iconsPerPage = 6;
     }
     CategoryViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Category"];
     controller.categoryList = categoryListTmp;
+    [controller setDelegate:self];
     
     CGRect frame = controller.view.frame;
     frame.origin.x = self.scrollView.frame.size.width * page;
@@ -196,7 +204,16 @@ static NSUInteger iconsPerPage = 6;
     
 }
 
-- (void)changeToMasterView:(UIButton *)sender{
-    NSLog(@"%@",@"ss");
+- (void)turnToMasterView:(UIButton *)sender{
+    //NSLog(@"%d",sender.tag);
+    [self performSegueWithIdentifier:@"ShowMasterView" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)button
+{
+    if ([[segue identifier] isEqualToString:@"ShowMasterView"]) {
+        
+        [(MasterViewController *)[segue destinationViewController] setCategoryId:button.tag];
+    }
 }
 @end

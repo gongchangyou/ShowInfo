@@ -17,6 +17,8 @@
     BOOL _reloading;
 }
 @property (retain, nonatomic) NSArray * newsList;
+@property (nonatomic)NSInteger categoryId;
 -(void)reloadTableViewDataSource;
 -(void)doneLoadingTableViewData;
+- (void)setCategoryId:(NSInteger)categoryId;
 @end

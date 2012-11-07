@@ -331,15 +331,16 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
     }
     return nil;
 }
-+(NSArray *)selectNews
++(NSArray *)selectNews:(int)categoryId
 {
     NSMutableArray *list = [[[NSMutableArray alloc] init] autorelease];
     
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name,poster_name,read from show_info order by id desc";
+    NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name,poster_name,read from show_info where categoryId=? order by id desc";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, categoryId);
     if( res == SQLITE_OK) {
         while(sqlite3_step(stmt) == SQLITE_ROW) {
             NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];

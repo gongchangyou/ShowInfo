@@ -17,7 +17,14 @@
 
 @implementation MasterViewController
 @synthesize newsList;
+@synthesize categoryId=_categoryId;
 
+- (void)setCategoryId:(NSInteger)categoryId
+{
+    if (_categoryId != categoryId) {
+        _categoryId = categoryId;
+    }
+}
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -48,16 +55,7 @@
     [_refreshHeaderView refreshLastUpdatedDate];
     
     //读取sqlite数据
-    self.newsList = [SQLite selectNews];
-    //[self performSelectorInBackground:@selector(request4news) withObject:nil];
-    //[self request4news];
-    
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-//    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)] autorelease];
-//    self.navigationItem.rightBarButtonItem = addButton;
+    self.newsList = [SQLite selectNews:self.categoryId];
 }
 -(void)reloadTableViewDataSource{
     
@@ -168,7 +166,7 @@
             NSLog(@"%@",[res objectForKey:@"status"]);
             
             NSString *status = [res objectForKey:@"status"];
-            [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityCenter] show];
+            [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityBottom] show];
         }
         if (_reloading) {
             _reloading =NO;

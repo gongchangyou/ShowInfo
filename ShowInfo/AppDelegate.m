@@ -45,8 +45,8 @@
         [dict release];
     }
     
-    [SQLite createTable:@"comment" crtSql:@"create table comment (id int, from_id int,from_name text, to_id int,to_name text,show_id int,comment text,star int, create_time text)"];
-    [SQLite createTable:@"category" crtSql:@"create table category (id int, name text)"];
+    [SQLite createTable:@"comment" crtSql:@"create table comment (id integer primary key autoincrement, from_id int,from_name text, to_id int,to_name text,show_id int,comment text,star int, create_time text)"];
+    [SQLite createTable:@"category" crtSql:@"create table category (id integer primary key autoincrement, name text)"];
     if(![SQLite isExistColumn:@"show_info" columnName:@"categoryId"]){
         [SQLite addColumn:@"show_info" columnName:@"categoryId" type:@"int" defaultValue:@"0"];
     }
