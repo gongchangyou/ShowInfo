@@ -272,5 +272,8 @@ static NSUInteger kNumberOfPages = 2;
 {
     pageControlUsed = NO;
 }
-
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 @end

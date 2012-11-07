@@ -183,7 +183,11 @@
 -(void)requestFailed:(ASIFormDataRequest *) request
 {
     if (request.tag == 0) {
-        [[[iToast makeText:NSLocalizedString(@"提交失败", @"")]setGravity:iToastGravityCenter] show];
+        [[[iToast makeText:NSLocalizedString(@"网络连接不上哦~", @"")]setGravity:iToastGravityBottom] show];
     }
+}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 @end

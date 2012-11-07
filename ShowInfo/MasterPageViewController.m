@@ -216,4 +216,8 @@ static NSUInteger iconsPerPage = 6;
         [(MasterViewController *)[segue destinationViewController] setCategoryId:button.tag];
     }
 }
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
 @end

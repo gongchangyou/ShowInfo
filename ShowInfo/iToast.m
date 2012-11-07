@@ -88,7 +88,7 @@ static iToastSettings *sharedSettings = nil;
 			if (theSettings.gravity == iToastGravityTop) {
 				point = CGPointMake(window.frame.size.width / 2, 45);
 			} else if (theSettings.gravity == iToastGravityBottom) {
-				point = CGPointMake(window.frame.size.width / 2, window.frame.size.height - 45);
+				point = CGPointMake(window.frame.size.width / 2, window.frame.size.height - 55);
 			} else if (theSettings.gravity == iToastGravityCenter) {
 				point = CGPointMake(window.frame.size.width/2, window.frame.size.height/2);
 			} else {
