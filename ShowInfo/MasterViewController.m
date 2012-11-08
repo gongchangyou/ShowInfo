@@ -130,7 +130,7 @@
 - (void)request4news
 {
     NSInteger latestId = [SQLite selectLatestId:@"show_info"];
-    NSString *url = @"http://2.shownews.sinaapp.com/downloadNews.php";
+    NSString *url = @"http://shownews.sinaapp.com/downloadNews.php";
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     request.tag = 0;

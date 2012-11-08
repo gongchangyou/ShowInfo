@@ -155,7 +155,7 @@
     [SQLite updateUser:dict];
     
     
-    NSString *url = @"http://2.shownews.sinaapp.com/addComment.php";
+    NSString *url = @"http://shownews.sinaapp.com/addComment.php";
     
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
