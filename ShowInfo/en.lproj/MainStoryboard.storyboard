@@ -118,11 +118,11 @@
             <objects>
                 <viewController id="BZW-7N-seC" customClass="DetailPageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Zb-8W-rcr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" id="pSx-FZ-lmb">
-                                <rect key="frame" x="0.0" y="20" width="320" height="406"/>
+                                <rect key="frame" x="1" y="-23" width="320" height="406"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="4kJ-LZ-dQ9">
@@ -275,11 +275,11 @@
             <objects>
                 <viewController storyboardIdentifier="CreateComment" title="CreatComment" id="LnG-VL-2YH" customClass="CreateCommentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Zc-Ic-7Sa">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="J59-d9-QxL" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="iNB-mg-irv">
@@ -397,7 +397,6 @@
                         <outlet property="rateView" destination="JSv-pg-oBL" id="avz-X8-rq4"/>
                         <outlet property="scrollView" destination="J59-d9-QxL" id="sdK-NZ-9km"/>
                         <outlet property="textView" destination="bPW-6J-KMO" id="VkO-Mo-xir"/>
-                        <segue destination="BZW-7N-seC" kind="push" identifier="ShowDetail" id="Rcx-eX-Agl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="90B-Qg-lBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,6 +567,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="t7Y-px-Fub"/>
-        <segue reference="Rcx-eX-Agl"/>
+        <segue reference="yVR-o8-N0i"/>
     </inferredMetricsTieBreakers>
 </document>

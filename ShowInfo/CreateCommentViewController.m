@@ -179,20 +179,13 @@
         NSString *status = [res objectForKey:@"status"];
         NSString *message = [res objectForKey:@"message"];
         if ([status isEqualToString:@"success"]) {
-            [[[iToast makeText:NSLocalizedString(message, @"")]setGravity:iToastGravityBottom] show];
-            [self performSegueWithIdentifier:@"ShowDetail" sender:self];
-            
+            [[[iToast makeText:NSLocalizedString(message, @"")]setGravity:iToastGravityBottom] show];            
         }else{
             [[[iToast makeText:NSLocalizedString(message, @"")]setGravity:iToastGravityBottom] show];
         }
     }
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
-        [[segue destinationViewController] setDetailItem:self.detailItem];
-    }
-}
+
 -(void)requestFailed:(ASIFormDataRequest *) request
 {
     if (request.tag == 0) {
