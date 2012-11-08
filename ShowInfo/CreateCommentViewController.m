@@ -84,13 +84,13 @@
     //实心星星
     for (int i = 0; i<avg_star; i++) {
         UIImageView *starImg = (UIImageView *)[contentView viewWithTag:(14 + i)];
-        [starImg setImage:[UIImage imageNamed:@"star_full.png"]];
+        [starImg setImage:[UIImage imageNamed:@"Resource/star_full.png"]];
     }
     
     //空心星星
     for (int i = avg_star; i<5; i++) {
         UIImageView *starImg = (UIImageView *)[contentView viewWithTag:(14 + i)];
-        [starImg setImage:[UIImage imageNamed:@"star_empty.png"]];
+        [starImg setImage:[UIImage imageNamed:@"Resource/star_empty.png"]];
     }
     
    // self.textView.layer.backgroundColor = UIColor.grayColor.CGColor;
@@ -155,7 +155,7 @@
     [SQLite updateUser:dict];
     
     
-    NSString *url = @"http://shownews.sinaapp.com/addComment.php";
+    NSString *url = @"http://2.shownews.sinaapp.com/addComment.php";
     
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
@@ -177,7 +177,20 @@
         NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
 
         NSString *status = [res objectForKey:@"status"];
-        [[[iToast makeText:NSLocalizedString(status, @"")]setGravity:iToastGravityBottom] show];
+        NSString *message = [res objectForKey:@"message"];
+        if ([status isEqualToString:@"success"]) {
+            [[[iToast makeText:NSLocalizedString(message, @"")]setGravity:iToastGravityBottom] show];
+            [self performSegueWithIdentifier:@"ShowDetail" sender:self];
+            
+        }else{
+            [[[iToast makeText:NSLocalizedString(message, @"")]setGravity:iToastGravityBottom] show];
+        }
+    }
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
+        [[segue destinationViewController] setDetailItem:self.detailItem];
     }
 }
 -(void)requestFailed:(ASIFormDataRequest *) request

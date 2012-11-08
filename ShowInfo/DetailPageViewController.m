@@ -219,13 +219,13 @@ static NSUInteger kNumberOfPages = 2;
     //实心星星
     for (int i = 0; i<star; i++) {
         UIImageView *starImg = (UIImageView *)[cell.contentView viewWithTag:(14 + i)];
-        [starImg setImage:[UIImage imageNamed:@"star_full.png"]];
+        [starImg setImage:[UIImage imageNamed:@"Resource/star_full.png"]];
     }
     
     //空心星星
     for (int i = star; i<5; i++) {
         UIImageView *starImg = (UIImageView *)[cell.contentView viewWithTag:(14 + i)];
-        [starImg setImage:[UIImage imageNamed:@"star_empty.png"]];
+        [starImg setImage:[UIImage imageNamed:@"Resource/star_empty.png"]];
     }
     
 	

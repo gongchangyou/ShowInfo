@@ -519,8 +519,6 @@ void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql);
             
             [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
                     forKey:@"star"];
-            [dic setObject:[NSNumber numberWithInt:sqlite3_column_int(stmt, i++)]
-                    forKey:@"show_id"];
             if ((char *)sqlite3_column_text(stmt, i)) {
                 [dic setObject:[NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, i++)]
                         forKey:@"creat_time"];

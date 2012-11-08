@@ -147,7 +147,6 @@ static NSUInteger iconsPerPage = 6;
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
-
     if (pageControlUsed)
     {
         return;
@@ -159,7 +158,8 @@ static NSUInteger iconsPerPage = 6;
 }
 - (void)viewDidLoad{
     // a page is the width of the scroll view
-    
+
+    self.refreshButtonItem.image = [UIImage imageNamed:@"Resource/refresh.png"];
     [self request4news];
     [self show];
 }
@@ -173,11 +173,13 @@ static NSUInteger iconsPerPage = 6;
 - (void)dealloc {
     [_scrollView release];
     [_pageControl release];
+    [_refreshButtonItem release];
     [super dealloc];
 }
 - (void)viewDidUnload {
     [self setScrollView:nil];
     [self setPageControl:nil];
+    [self setRefreshButtonItem:nil];
     [super viewDidUnload];
 }
 
@@ -219,5 +221,9 @@ static NSUInteger iconsPerPage = 6;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)refresh:(id)sender{
+    [self request4news];
 }
 @end

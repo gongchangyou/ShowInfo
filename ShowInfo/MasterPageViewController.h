@@ -30,5 +30,6 @@
 @property (nonatomic, retain) NSMutableArray *viewControllers;
 @property (nonatomic, retain)NSArray *categoryList;
 - (IBAction)changePage:(id)sender;
-
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *refreshButtonItem;
+- (IBAction)refresh:(id)sender;
 @end

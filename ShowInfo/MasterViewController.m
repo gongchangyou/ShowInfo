@@ -130,11 +130,12 @@
 - (void)request4news
 {
     NSInteger latestId = [SQLite selectLatestId:@"show_info"];
-    NSString *url = @"http://shownews.sinaapp.com/downloadNews.php";
+    NSString *url = @"http://2.shownews.sinaapp.com/downloadNews.php";
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     request.tag = 0;
-    [request addPostValue:[NSString stringWithFormat:@"%d",latestId] forKey:@"start_id"];//当前用户Id
+    [request addPostValue:[NSString stringWithFormat:@"%d",latestId] forKey:@"start_id"];
+    [request addPostValue:[NSString stringWithFormat:@"%d",self.categoryId] forKey:@"categoryId"];
     [request startAsynchronous];
     [request release];
 }
