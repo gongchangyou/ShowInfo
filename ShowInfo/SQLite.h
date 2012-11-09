@@ -10,6 +10,7 @@
 #import <sqlite3.h>
 #import "JSONKit.h"
 
+extern NSString * const kDomain;
 
 @interface SQLite : NSObject
 + (NSDictionary *) selectShowById:(int)show_id;

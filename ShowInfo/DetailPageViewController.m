@@ -163,7 +163,7 @@ static NSUInteger kNumberOfPages = 2;
 -(void) request4commentList{
     //请求评论列表
     
-    NSString *url = @"http://shownews.sinaapp.com/commentList.php";
+    NSString *url = [kDomain stringByAppendingString:@"commentList.php"];
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
     request.tag = 2;

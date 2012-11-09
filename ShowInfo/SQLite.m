@@ -17,7 +17,7 @@
 
 void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql); }
 
-
+NSString * const kDomain = @"http://2.shownews.sinaapp.com/";
 @implementation SQLite
 
 
