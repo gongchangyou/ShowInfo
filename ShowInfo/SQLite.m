@@ -693,11 +693,26 @@ NSString * const kDomain = @"http://2.shownews.sinaapp.com/";
     }
     return nil;
 }
-
 + (NSString *)selectImageName:(int)categoryId{
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
     NSString *sql = @"select image_name  from show_info where categoryId=? order by id desc limit 1";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, categoryId);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            return [NSString stringWithUTF8String:(char *)sqlite3_column_text(stmt, 0)];
+        }
+    } else {
+        NSLog(@"can't select table? %s", sqlite3_errmsg(DBCONN));
+    }
+    return nil;
+}
++ (NSString *)selectCategoryName:(int)categoryId{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    NSString *sql = @"select name  from category where id=? ";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     sqlite3_bind_int(stmt, 1, categoryId);

@@ -37,4 +37,5 @@ extern NSString * const kDomain;
 + (BOOL) addColumn:(NSString *)table columnName:(NSString *)columnName type:(NSString *)type defaultValue:(NSString *)defaultValue;
 + (NSString *)selectImageName:(int)categoryId;
 + (NSArray *)selectCategory;
++ (NSString *)selectCategoryName:(int)categoryId;
 @end

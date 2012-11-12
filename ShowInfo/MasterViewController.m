@@ -56,6 +56,10 @@
     
     //读取sqlite数据
     self.newsList = [SQLite selectNews:self.categoryId];
+    
+    //读取分类名
+    NSString *categoryName = [SQLite selectCategoryName:self.categoryId];
+    self.navigationItem.title = categoryName;
 }
 -(void)reloadTableViewDataSource{
     
