@@ -17,7 +17,7 @@
 
 void trace_callback( void* udp, const char* sql ) { printf("{SQL} [%s]\n", sql); }
 
-NSString * const kDomain = @"http://2.shownews.sinaapp.com/";
+NSString * const kDomain = @"http://shownews.sinaapp.com/";
 @implementation SQLite
 
 
@@ -696,7 +696,7 @@ NSString * const kDomain = @"http://2.shownews.sinaapp.com/";
 + (NSString *)selectImageName:(int)categoryId{
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
-    NSString *sql = @"select image_name  from show_info where categoryId=? order by id desc limit 1";
+    NSString *sql = @"select image_name  from show_info where categoryId=? and image_name!='' and image_name !='sci.gif' order by id desc limit 1";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     sqlite3_bind_int(stmt, 1, categoryId);

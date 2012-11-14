@@ -147,6 +147,10 @@
 -(void)requestFinished:(ASIFormDataRequest *) request
 {
     if (request.tag == 0) {
+        //记录刷新时间
+        NSString *last_updated_time = [self getDate:[NSDate date]];
+        [[NSUserDefaults standardUserDefaults] setValue:last_updated_time forKey:@"last_updated_time"];
+        
         NSString *response = [request responseString];
     
         NSDictionary *res = (NSDictionary *)[response objectFromJSONString];
@@ -163,10 +167,6 @@
             
             self.newsList  = [SQLite selectNews:self.categoryId];
             [self.tableView reloadData];
-            
-            //记录刷新时间
-            NSString *last_updated_time = [self getDate:[NSDate date]];
-            [[NSUserDefaults standardUserDefaults] setValue:last_updated_time forKey:@"last_updated_time"];
         }else {
             NSLog(@"%@",[res objectForKey:@"status"]);
             
