@@ -22,7 +22,18 @@ static NSUInteger iconsPerPage = 6;
 - (void)request4news
 {
     NSInteger latestCategoryId = [SQLite selectLatestId:@"category"];
-    NSInteger latestShowInfoId = [SQLite selectLatestId:@"show_info"];
+    NSArray *categoryAry = [SQLite selectCategory];
+    NSString *show_info_start_id = @"";
+    for (NSDictionary * category in categoryAry){
+        NSInteger categoryId = [[category objectForKey:@"id"]intValue];
+        NSInteger latestShowInfoId = [SQLite selectLatestShowInfoId:categoryId];
+        show_info_start_id = [show_info_start_id stringByAppendingString:[NSString stringWithFormat:@"%d:%d,",categoryId, latestShowInfoId]];
+    }
+    if (show_info_start_id.length) {
+        show_info_start_id = [show_info_start_id substringToIndex:show_info_start_id.length-1];
+    }
+    
+    
     NSArray *showIdArray = [SQLite selectNewsWithoutCategory];
     NSString *showId = @"";
     for(NSDictionary *dic in showIdArray){
@@ -40,7 +51,7 @@ static NSUInteger iconsPerPage = 6;
     request.tag = 0;
     [request addPostValue:[NSString stringWithFormat:@"%d",latestCategoryId] forKey:@"category_start_id"];
     [request addPostValue:showId forKey:@"show_id_str"];
-    [request addPostValue:[NSString stringWithFormat:@"%d",latestShowInfoId] forKey:@"show_info_start_id"];
+    [request addPostValue:show_info_start_id forKey:@"show_info_start_id"];
     [request startAsynchronous];
     [request release];
 }

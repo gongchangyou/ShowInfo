@@ -190,6 +190,24 @@ NSString * const kDomain = @"http://shownews.sinaapp.com/";
     }
     return 0;
 }
++ (NSInteger)  selectLatestShowInfoId:(int) categoryId
+{
+    sqlite3 *DBCONN = [self open];
+    sqlite3_stmt    *stmt;
+    
+    NSString *sql = @"select max(id) as id from show_info where categoryId=? ";
+    
+    NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
+    sqlite3_bind_int(stmt, 1, categoryId);
+    if( res == SQLITE_OK) {
+        while(sqlite3_step(stmt) == SQLITE_ROW) {
+            return sqlite3_column_int(stmt, 0);
+        }
+    } else {
+        return 0;
+    }
+    return 0;
+}
 
 + (BOOL) insertNews:(NSDictionary*)data
 {   sqlite3 *DBCONN = [self open];

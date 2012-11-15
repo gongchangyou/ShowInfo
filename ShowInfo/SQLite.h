@@ -20,6 +20,7 @@ extern NSString * const kDomain;
 + (BOOL) insertCategory:(NSDictionary*)data;
 + (BOOL) updateCategoryId:(NSDictionary*)data;
 + (NSInteger)  selectLatestId:(NSString*) tableName;
++ (NSInteger)  selectLatestShowInfoId:(int) categoryId;
 + (BOOL) insertNews: (NSDictionary *)newsData;
 + (NSArray *) selectNews:(int)categoryId;
 + (NSArray *)selectNewsWithoutCategory;

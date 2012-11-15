@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "415"
-         endingLineNumber = "415"
+         startingLineNumber = "433"
+         endingLineNumber = "433"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "422"
-         endingLineNumber = "422"
+         startingLineNumber = "440"
+         endingLineNumber = "440"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "416"
-         endingLineNumber = "416"
+         startingLineNumber = "434"
+         endingLineNumber = "434"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "417"
-         endingLineNumber = "417"
+         startingLineNumber = "435"
+         endingLineNumber = "435"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "432"
-         endingLineNumber = "432"
+         startingLineNumber = "450"
+         endingLineNumber = "450"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "434"
-         endingLineNumber = "434"
+         startingLineNumber = "452"
+         endingLineNumber = "452"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "435"
-         endingLineNumber = "435"
+         startingLineNumber = "453"
+         endingLineNumber = "453"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "424"
-         endingLineNumber = "424"
+         startingLineNumber = "442"
+         endingLineNumber = "442"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +216,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "425"
-         endingLineNumber = "425"
+         startingLineNumber = "443"
+         endingLineNumber = "443"
          landmarkName = "+createTable:crtSql:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -788,11 +788,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373990489.086031"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "506"
-         endingLineNumber = "506"
+         startingLineNumber = "524"
+         endingLineNumber = "524"
          landmarkName = "+selectComments:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1165,24 +1165,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374045453.759035"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
+         startingLineNumber = "174"
+         endingLineNumber = "174"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373959048.489275"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639260.1509"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "65"
+         endingLineNumber = "65"
          landmarkName = "-requestFinished:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1191,37 +1204,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373959087.792706"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "-requestFinished:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374045453.759035"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
+         startingLineNumber = "176"
+         endingLineNumber = "176"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373959396.703199"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
          landmarkName = "-request4news"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1230,33 +1230,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373960178.91925"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "312"
-         endingLineNumber = "312"
-         landmarkName = "+selectNewsWithoutCategory"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/SQLite.m"
-         timestampString = "373960178.91925"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "319"
-         endingLineNumber = "319"
-         landmarkName = "+selectNewsWithoutCategory"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/SQLite.m"
-         timestampString = "373960178.91925"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "330"
@@ -1269,11 +1243,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373960178.91925"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "320"
-         endingLineNumber = "320"
+         startingLineNumber = "337"
+         endingLineNumber = "337"
          landmarkName = "+selectNewsWithoutCategory"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1282,11 +1256,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373960178.91925"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "321"
-         endingLineNumber = "321"
+         startingLineNumber = "348"
+         endingLineNumber = "348"
          landmarkName = "+selectNewsWithoutCategory"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1295,11 +1269,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "373960178.91925"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "328"
-         endingLineNumber = "328"
+         startingLineNumber = "338"
+         endingLineNumber = "338"
+         landmarkName = "+selectNewsWithoutCategory"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/SQLite.m"
+         timestampString = "374636690.923718"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "339"
+         endingLineNumber = "339"
+         landmarkName = "+selectNewsWithoutCategory"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/SQLite.m"
+         timestampString = "374636690.923718"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "346"
+         endingLineNumber = "346"
          landmarkName = "+selectNewsWithoutCategory"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1321,11 +1321,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-requestFailed:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1334,7 +1334,33 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "-show"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639260.1509"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "112"
@@ -1347,37 +1373,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "77"
-         endingLineNumber = "77"
-         landmarkName = "-requestFinished:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
-         landmarkName = "-show"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "145"
+         endingLineNumber = "145"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1386,11 +1386,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "136"
-         endingLineNumber = "136"
+         startingLineNumber = "147"
+         endingLineNumber = "147"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1399,11 +1399,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "137"
-         endingLineNumber = "137"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1412,11 +1412,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "140"
-         endingLineNumber = "140"
+         startingLineNumber = "151"
+         endingLineNumber = "151"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1425,11 +1425,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "141"
-         endingLineNumber = "141"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1438,11 +1438,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
+         startingLineNumber = "153"
+         endingLineNumber = "153"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1451,11 +1451,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "154"
+         endingLineNumber = "154"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1464,51 +1464,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "27"
-         endingLineNumber = "27"
-         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1516,11 +1477,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377744.872265"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "701"
-         endingLineNumber = "701"
+         startingLineNumber = "719"
+         endingLineNumber = "719"
          landmarkName = "+selectImageName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1529,11 +1490,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377744.872265"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "699"
-         endingLineNumber = "699"
+         startingLineNumber = "717"
+         endingLineNumber = "717"
          landmarkName = "+selectImageName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1542,11 +1503,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377744.872265"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "702"
-         endingLineNumber = "702"
+         startingLineNumber = "720"
+         endingLineNumber = "720"
          landmarkName = "+selectImageName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1555,11 +1516,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377744.872265"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "704"
-         endingLineNumber = "704"
+         startingLineNumber = "722"
+         endingLineNumber = "722"
          landmarkName = "+selectImageName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1568,64 +1529,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377744.872265"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "705"
-         endingLineNumber = "705"
+         startingLineNumber = "723"
+         endingLineNumber = "723"
          landmarkName = "+selectImageName:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "30"
-         endingLineNumber = "30"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
-         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -1698,11 +1607,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "122"
-         endingLineNumber = "122"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1711,11 +1620,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
+         startingLineNumber = "137"
+         endingLineNumber = "137"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1724,11 +1633,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1737,11 +1646,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1750,11 +1659,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
+         startingLineNumber = "142"
+         endingLineNumber = "142"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1763,11 +1672,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
          landmarkName = "-loadScrollViewWithPage:maxPage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1776,11 +1685,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "373992793.41269"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
          landmarkName = "-show"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1788,38 +1697,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "26"
-         endingLineNumber = "26"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ShowInfo/CategoryViewController.m"
-         timestampString = "373989124.914008"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374045453.759035"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "221"
+         endingLineNumber = "221"
          landmarkName = "-turnToMasterView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1841,11 +1724,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374045453.759035"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "216"
-         endingLineNumber = "216"
+         startingLineNumber = "227"
+         endingLineNumber = "227"
          landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1867,11 +1750,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374031159.163886"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-requestFinished:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2088,11 +1971,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374057687.616495"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-requestFinished:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2101,16 +1984,16 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterPageViewController.m"
-         timestampString = "374117453.549421"
+         timestampString = "374639260.1509"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/MasterViewController.m"
@@ -2123,15 +2006,28 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377797.603918"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "713"
-         endingLineNumber = "713"
+         startingLineNumber = "731"
+         endingLineNumber = "731"
+         landmarkName = "+selectCategoryName:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/SQLite.m"
+         timestampString = "374636690.923718"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "737"
+         endingLineNumber = "737"
          landmarkName = "+selectCategoryName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2140,25 +2036,116 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377805.259257"
+         timestampString = "374636690.923718"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "719"
-         endingLineNumber = "719"
+         startingLineNumber = "742"
+         endingLineNumber = "742"
          landmarkName = "+selectCategoryName:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterViewController.m"
+         timestampString = "374551607.468225"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
+         landmarkName = "-request4news"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterViewController.m"
+         timestampString = "374551626.740838"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
+         landmarkName = "-request4news"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ShowInfo/SQLite.m"
-         timestampString = "374377811.635442"
+         filePath = "ShowInfo/CategoryViewController.m"
+         timestampString = "374552525.53774"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "724"
-         endingLineNumber = "724"
-         landmarkName = "+selectCategoryName:"
+         startingLineNumber = "66"
+         endingLineNumber = "66"
+         landmarkName = "-didReceiveMemoryWarning"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639260.1509"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
+         landmarkName = "-request4news"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639260.1509"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "-request4news"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639203.553445"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-request4news"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639217.007002"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "-request4news"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ShowInfo/MasterPageViewController.m"
+         timestampString = "374639260.1509"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "35"
+         endingLineNumber = "35"
+         landmarkName = "-request4news"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

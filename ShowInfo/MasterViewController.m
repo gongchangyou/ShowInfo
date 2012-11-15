@@ -133,7 +133,7 @@
 }
 - (void)request4news
 {
-    NSInteger latestId = [SQLite selectLatestId:@"show_info"];
+    NSInteger latestId = [SQLite selectLatestShowInfoId:self.categoryId];
     NSString *url = [kDomain stringByAppendingString:@"downloadNews.php"];
     ASIFormDataRequest *request=[[ASIFormDataRequest alloc]initWithURL:[NSURL URLWithString:url]];
     [request setDelegate:self];
