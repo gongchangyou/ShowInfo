@@ -12,9 +12,9 @@
 
 @interface DetailPageViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate,UITableViewDataSource>
 {
-    UIScrollView *scrollView;
-	UIPageControl *pageControl;
-    NSMutableArray *viewControllers;
+//    UIScrollView *scrollView;
+//	UIPageControl *pageControl;
+//    NSMutableArray *viewControllers;
     
     // To be used when scrolls originate from the UIPageControl
     BOOL pageControlUsed;

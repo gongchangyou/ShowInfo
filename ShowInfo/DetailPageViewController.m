@@ -21,7 +21,10 @@ static NSUInteger kNumberOfPages = 2;
 
 - (void)dealloc
 {
+//    
     [_detailItem release];
+    [_viewControllers removeAllObjects];
+    [self.scrollView removeFromSuperview];
     [self.scrollView release];
     [self.request clearDelegatesAndCancel];
     [self.request release];

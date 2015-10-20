@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MasterViewController dealloc]:MasterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_refreshHeaderView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController dealloc]:DetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "super">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailPageViewController dealloc]:DetailPageViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

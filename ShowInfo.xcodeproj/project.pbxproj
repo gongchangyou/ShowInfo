@@ -662,6 +662,7 @@
 		F788FF7B15FEE10200D6F237 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShowInfo/ShowInfo-Prefix.pch";
 				INFOPLIST_FILE = "ShowInfo/ShowInfo-Info.plist";
@@ -674,6 +675,7 @@
 		F788FF7C15FEE10200D6F237 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShowInfo/ShowInfo-Prefix.pch";
 				INFOPLIST_FILE = "ShowInfo/ShowInfo-Info.plist";
@@ -708,6 +710,7 @@
 		F794A39D160AE5420005D1AC /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShowInfo/ShowInfo-Prefix.pch";
 				INFOPLIST_FILE = "ShowInfo/ShowInfo-Info.plist";
