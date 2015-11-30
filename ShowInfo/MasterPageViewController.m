@@ -122,7 +122,7 @@ static NSUInteger iconsPerPage = 6;
     self.pageControl.numberOfPages = kNumberOfPages;
     self.pageControl.currentPage = 0;
     
-    self.viewControllers = [[NSMutableArray alloc]init];
+    self.viewControllers = [[[NSMutableArray alloc]init] autorelease];
     for (int i=0; i<kNumberOfPages; i++) {
         [self loadScrollViewWithPage:i maxPage:kNumberOfPages];
     }
@@ -139,7 +139,7 @@ static NSUInteger iconsPerPage = 6;
         //最后一页
         end = [self.categoryList count];
     }
-    NSMutableArray *categoryListTmp = [[NSMutableArray alloc]init];
+    NSMutableArray *categoryListTmp = [[[NSMutableArray alloc]init] autorelease];
    
     for(int i=page*6; i<end; i++) {
         [categoryListTmp addObject:[self.categoryList objectAtIndex:i]];
@@ -173,6 +173,7 @@ static NSUInteger iconsPerPage = 6;
     self.refreshButtonItem.image = [UIImage imageNamed:@"Resource/refresh.png"];
     [self request4news];
     [self show];
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning

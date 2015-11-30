@@ -38,7 +38,7 @@
     self.star = 0;
     self.UUID = [[NSUserDefaults standardUserDefaults] stringForKey:@"ShowInfo_UUID"];
     //读取sqlite 评论数据
-    self.commentList = [[NSArray alloc] init];
+    self.commentList = [[[NSArray alloc] init] autorelease];
     
     self.commentList = [SQLite selectComments:[[self.detailItem objectForKey: @"id"]intValue]];
     UIView *contentView = [self.view viewWithTag:0];
@@ -68,14 +68,16 @@
     
     //tag=14-18 计算星星
     int avg_star = 0;
-    for (NSDictionary *comment in self.commentList) {
-        int star = [[comment objectForKey:@"star"] intValue];
-        
-        if (star) {
-            avg_star += star ;
+    if ( [self.commentList count] > 0 ) {
+        for (NSDictionary *comment in self.commentList) {
+            int star = [[comment objectForKey:@"star"] intValue];
+            
+            if (star) {
+                avg_star += star ;
+            }
         }
-        
     }
+   
     if ([self.commentList count]) {
         avg_star /= [self.commentList count];
     }
@@ -95,8 +97,8 @@
     
    // self.textView.layer.backgroundColor = UIColor.grayColor.CGColor;
     self.textView.layer.borderWidth = 1;
-
-    self.tapRateView = [[RSTapRateView alloc] initWithFrame:CGRectMake(0, 0, self.rateView.frame.size.width, 50.f)];
+    
+    self.tapRateView = [[[RSTapRateView alloc] initWithFrame:CGRectMake(0, 0, self.rateView.frame.size.width, 50.f)] autorelease];
     self.tapRateView.delegate = self;
     
     [self.rateView addSubview:self.tapRateView];
@@ -151,7 +153,7 @@
     }
     //保存用户信息
     
-    NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:self.UUID,@"UUID",name,@"name", nil];
+    NSDictionary *dict = [[[NSDictionary alloc] initWithObjectsAndKeys:self.UUID,@"UUID",name,@"name", nil] autorelease];
     [SQLite updateUser:dict];
     
     

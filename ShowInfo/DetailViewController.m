@@ -39,7 +39,7 @@
 {
     
     UIImage *image = [UIImage imageWithContentsOfFile:posterPathToFile];
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(160-image.size.width/2, 10, image.size.width, image.size.height)];
+    UIImageView *imgView = [[[UIImageView alloc]initWithFrame:CGRectMake(160-image.size.width/2, 10, image.size.width, image.size.height)] autorelease];
     [imgView setImage:image];
     
     [self.introductionTextView addSubview:imgView];

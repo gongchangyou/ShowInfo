@@ -278,7 +278,7 @@ NSString * const kDomain = @"http://shownews.sinaapp.com/";
 + (NSDictionary *) selectShowById:(int)show_id
 {
     
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *dic = [[[NSMutableDictionary alloc] init] autorelease];
     sqlite3 *DBCONN = [self open];
     sqlite3_stmt    *stmt;
     NSString *sql = @"select id, title, address, show_time, price, telephone, introduction, url,report_date,report_media,image_name, poster_name, read from show_info where id = ?";
@@ -608,7 +608,7 @@ NSString * const kDomain = @"http://shownews.sinaapp.com/";
     
     NSInteger res = sqlite3_prepare_v2(DBCONN, [sql UTF8String], -1, &stmt, NULL);
     sqlite3_bind_text(stmt, 1, [UUID UTF8String], -1, NULL);
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary *dic = [[[NSMutableDictionary alloc]init] autorelease];
     if( res == SQLITE_OK) {
         while(sqlite3_step(stmt) == SQLITE_ROW) {
            

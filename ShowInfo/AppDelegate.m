@@ -38,11 +38,12 @@
     [SQLite createTable:@"user" crtSql:@"create table user (id integer primary key autoincrement, UUID text,name text)"];
     NSString *UUID = [[NSUserDefaults standardUserDefaults] stringForKey:@"ShowInfo_UUID"];
     if (UUID == nil) {
-        UUID =  (NSString *)CFUUIDCreateString(NULL, CFUUIDCreate(NULL));
+        CFUUIDRef uuidObj = CFUUIDCreate(NULL);
+        UUID =  [(NSString *)CFUUIDCreateString(NULL, uuidObj) autorelease];
+        CFRelease(uuidObj);
         [[NSUserDefaults standardUserDefaults] setValue:UUID forKey:@"ShowInfo_UUID"];
-        NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:UUID,@"UUID", nil];
+        NSDictionary * dict = [[[NSDictionary alloc] initWithObjectsAndKeys:UUID,@"UUID", nil] autorelease];
         [SQLite insertUser:dict];
-        [dict release];
     }
     
     [SQLite createTable:@"comment" crtSql:@"create table comment (id integer primary key autoincrement, from_id int,from_name text, to_id int,to_name text,show_id int,comment text,star int, create_time text)"];

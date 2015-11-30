@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     //读取sqlite 评论数据
-    self.commentList = [[NSArray alloc] init];
+    self.commentList = [[[NSArray alloc] init] autorelease];
     self.commentList = [SQLite selectComments:[[self.detailItem objectForKey: @"id"]intValue]];
     UIView *contentView = [self.view viewWithTag:0];
     

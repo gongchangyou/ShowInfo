@@ -21,7 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.showCalendar =(NSMutableArray *) [SQLite selectCalendar];
-    self.isShowDay = [[NSMutableDictionary alloc] init];
+    self.isShowDay = [[[NSMutableDictionary alloc] init] autorelease];
     for (NSDictionary *showDay in self.showCalendar) {
         [self.isShowDay setValue:[NSNumber numberWithBool:YES] forKey:[showDay objectForKey:@"day"]];
     }
@@ -44,7 +44,8 @@
     }
     if ([dates count]) {
         [VRGCalendarView markDates:dates];
-    }    
+    }
+    [dates release];
 }
 
 

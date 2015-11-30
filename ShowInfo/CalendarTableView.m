@@ -23,7 +23,7 @@
 		[tv setDelegate:self];
 		
 		//[[NSBundle mainBundle] loadNibNamed:@"UAExampleView" owner:self options:nil];
-		self.showList = [[NSMutableArray alloc] init];
+		self.showList = [[[NSMutableArray alloc] init] autorelease];
         NSArray *showIds = [SQLite selectShowByDay:title];
         for (NSDictionary *show in showIds) {
             int show_id = [[show objectForKey:@"show_id"] intValue];

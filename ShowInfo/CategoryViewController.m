@@ -41,7 +41,7 @@
         //添加label
         NSString *name = [[self.categoryList objectAtIndex:i] objectForKey:@"name"];
         
-        UILabel *nameLabel = [[UILabel alloc]init];
+        UILabel *nameLabel = [[[UILabel alloc]init] autorelease];
         int labelHeight = 20;
         int labelWidth = 70;
         if (i %2) {

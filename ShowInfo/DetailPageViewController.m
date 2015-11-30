@@ -25,9 +25,9 @@ static NSUInteger kNumberOfPages = 2;
     [_detailItem release];
     [_viewControllers removeAllObjects];
     [self.scrollView removeFromSuperview];
-    [self.scrollView release];
+//    [self.scrollView release];
     [self.request clearDelegatesAndCancel];
-    [self.request release];
+//    [self.request release];
     [super dealloc];
 }
 - (void)setDetailItem:(id)newDetailItem
@@ -87,9 +87,10 @@ static NSUInteger kNumberOfPages = 2;
     self.pageControl.numberOfPages = kNumberOfPages;
     self.pageControl.currentPage = 0;
     
-    self.viewControllers = [[NSMutableArray alloc]init];
+    self.viewControllers = [[[NSMutableArray alloc]init] autorelease];
     [self loadScrollViewWithPage:0];
     [self loadScrollViewWithPage:1];
+    [super viewDidLoad];
 }
 - (void)loadScrollViewWithPage:(int)page
 {
