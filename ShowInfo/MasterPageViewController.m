@@ -122,7 +122,7 @@ static NSUInteger iconsPerPage = 6;
     self.pageControl.numberOfPages = kNumberOfPages;
     self.pageControl.currentPage = 0;
     
-    self.viewControllers = [[[NSMutableArray alloc]init] autorelease];
+    self.viewControllers = [[[NSMutableArray alloc] init] autorelease];
     for (int i=0; i<kNumberOfPages; i++) {
         [self loadScrollViewWithPage:i maxPage:kNumberOfPages];
     }
@@ -169,7 +169,7 @@ static NSUInteger iconsPerPage = 6;
 }
 - (void)viewDidLoad{
     // a page is the width of the scroll view
-
+    _viewControllers = nil;
     self.refreshButtonItem.image = [UIImage imageNamed:@"Resource/refresh.png"];
     [self request4news];
     [self show];
